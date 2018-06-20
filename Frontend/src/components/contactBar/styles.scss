@@ -1,0 +1,36 @@
+.contact-bar{
+    width: 100%;
+    background-color: grey;
+    position: relative;
+    z-index: 2;
+    ul {
+        width: 100%;
+        padding: 0px;
+        text-align: center;
+        margin: 0;
+        li {
+            width: 32%;
+            padding: 0px;
+            height:20px;
+            display: inline-block;
+            font-size: .8em;
+            i, a {
+                font-size: .8em;
+                padding-right: 3px;
+            }
+
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .contact-bar{
+        ul{
+            li{
+                width: 100%;
+                display: block;
+            }
+        }
+    }
+
+}

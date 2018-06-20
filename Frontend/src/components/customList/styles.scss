@@ -1,0 +1,26 @@
+.list-display-block {
+    background: #e4e4e4;
+    margin: 8px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    div {
+        max-width: 100%;
+    }
+}
+.list-title {
+    width: 100%;
+    background: white;
+    padding: 10px;
+    display: block;
+    font-size: 1.1em;
+    margin-right: 5px;
+    margin-bottom: 4px;
+    font-weight: bold;
+    border-bottom: solid black 1px;
+}
+.list-value {
+    padding: 4px;
+    word-wrap: break-word;
+    max-width: 100%;
+}

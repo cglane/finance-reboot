@@ -1,0 +1,63 @@
+.status-button {
+  width: auto;
+  max-width: 200px;
+  min-height: 48px;
+  padding-top: 15px !important;
+  span {
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    -ms-transition: all 1s;
+    transition: all 1s;
+    &:hover {
+      -webkit-transition: all 1s;
+      -moz-transition: all 1s;
+      -o-transition: all 1s;
+      -ms-transition: all 1s;
+      transition: all 1s;
+      font-size: 1.1em;
+    }
+  }
+}
+.status-circle {
+    position: absolute;
+    z-index: 11;
+    width:100%;
+    top: 10%;
+    left: 0%; bottom: 0; right: 0;
+    .explore {
+        width: auto;
+        position: absolute;
+        margin-top: 10px;
+        width: 100%;
+        // left: 37%;
+        top: 15vh;
+        h5 {
+          font-size:1.5em;
+          -moz-osx-font-smoothing: 'grayscale';
+        }
+        h3 {
+          font-size: .8em;
+        }
+    }
+    #svg circle {
+        stroke: #666;
+        stroke-width: .15em;
+
+
+      }
+      #svg #bar-background {
+        color:white;
+        z-index: -1;        
+        opacity: .3;
+
+
+      }
+      #svg #bar {
+        stroke: white;
+        z-index: 100;
+
+      }
+          
+}
+

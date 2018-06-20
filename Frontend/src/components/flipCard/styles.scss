@@ -1,0 +1,113 @@
+
+.mobile-no-flip {
+    width: 100%;
+    padding: 10px;
+    p {
+        border-top: solid black 1px;
+        padding-top: 20px;
+    }
+}
+
+.back-bar {
+    background: gray;
+    opacity: .8;
+    font-size: 2em;
+    text-align: center;
+    width: 90%;
+    &:hover {
+        opacity: 1;
+    }
+}
+.front-card-explore {
+    color: red !important;
+    font-size: 1.5em !important;
+    z-index: 30;
+    &:hover {
+        font-size: 1.6em !important;
+    }
+}
+
+.front-card-wrapper {
+    font-family: "NeoRetroFill", Garamond, serif;
+    h1 {
+        position: relative;
+        left: -20%;
+        top: -10%;
+        color: #797979;
+        font-style: italic;
+        min-width: 50vw;
+        
+    }
+    div {
+        margin-top: 0%;
+        // min-width: 350px;
+    }
+    p {
+        color: #636363;
+        font-size: 1.4em;
+        font-family: Garamond, serif;
+    }
+}
+.back-card-wrapper {
+        color: #636363;
+        font-size: 1.4em;
+        // line-height: 5px;
+        font-family: Garamond, serif;
+        text-align: left;
+        max-width: 95%;
+
+    
+    
+}
+.back-page-wrapper {
+    height: 400px;
+    overflow: hidden;
+    transition: opacity 2s;
+    transition: height 1s;
+  }
+
+@media only screen and (max-width: 1000px) {
+    .detail-description-wrapper {
+        width: 95vw !important;
+        padding: 2%;
+        font-size: .8em;
+        div {
+            max-width: 100%;
+        }
+    }
+    .front-card-wrapper {
+        max-width: 100% !important;
+        h1 {
+            position: relative;
+            color: #797979;
+            font-style: italic;
+            font-size: 3em;
+            max-width: 80%;
+            left: 0px;
+        }
+        p {
+            text-align: center;
+            width: 100%;
+            padding: 20px;
+            font-size: 1.5em;
+            
+            
+        }
+        div {
+            width: 100%;
+            margin-top: 0%;
+
+        }
+    }
+    .front-card-explore {
+        position: relative;
+        width: 40%;
+        left: 0px;
+    }
+    .back-card-wrapper {
+        max-width: 100%;
+        span {
+            max-width: 100%;
+        }
+    }
+}

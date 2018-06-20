@@ -1,0 +1,66 @@
+.listing-card {
+    margin: auto;
+    flex-shrink: 2;
+    display: inline-block;  
+    transition: opacity 3s;
+    font-family: "NeoRetroFill", Garamond, serif;
+}
+.listing-card-full {
+    width: 50%;
+    margin: auto;
+}
+
+.hover-hide-background {
+    &:hover {
+        background: rgba(0, 0, 0, 0.1) !important;
+    }
+}
+.listing-card-large {
+    width: 25%;
+    height: 500px;
+    overflow: hidden;
+    padding: 10px;
+
+    img {
+        max-height: 300px;
+        overflow: hidden;
+    }
+}
+.listing-card-small {
+    max-width: 25%;
+    height: 500px;
+    overflow: hidden;
+    img {
+        max-height: 300px;
+        overflow: hidden;
+    }
+}
+.listing-card-scroll {
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+    img {
+        max-height: 300px;
+        overflow: hidden;
+    }
+}
+.listing-card-cluster-small {
+    width: 50%;
+    float: left;
+}
+.listing-card-cluster-large {
+    width: 100%;
+}
+@media only screen and (max-width: 1000px) {
+    .listing-card {
+        min-width: 100%;
+        margin-top: 10%;
+        height: auto;
+        img {
+            max-height: 1000px;
+        }
+    }
+    .listing-card-cluster-small {
+        width: 100% !important;
+    }
+}

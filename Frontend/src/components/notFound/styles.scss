@@ -1,0 +1,41 @@
+.not-found-wrapper {
+    width: 100vw;
+    height: 110vh;
+    position: fixed;
+    top: 0px;
+    z-index: 0;
+    transition: opacity 1s;
+}
+.not-found-message{
+    height: auto;
+    margin: 10%;
+    margin-top: 30vh;
+    padding: 0;
+    width: 90vw;
+    text-align: center;
+    overflow: hidden;
+}
+.loading {
+    position: fixed;
+    z-index: 20;
+    top: 0px;
+    height: 3000vh;
+    width: 100%;
+    background: red;
+    z-index: 10;
+
+}
+.loading-right {
+    left: 101vw;
+}
+.loading-left {
+    left: -101vw;
+}
+.overlay-brand-loading {
+    position: absolute;
+    width: 30%;
+    margin: auto;
+    right: 0; 
+    top: 40%;
+    left: 0
+}

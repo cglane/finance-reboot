@@ -1,0 +1,32 @@
+
+
+@font-face {
+    font-family: 'NeoRetroFill';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../../neoretrofill/NeoRetroFill.ttf'); /* IE9 Compat Modes */
+  }
+
+body, html {
+    overflow-x: hidden; 
+    overflow-y: hidden;
+    position: 'fixed';
+    margin: 0;
+    width: 100vw;
+    div {
+        // font-family: "Bodoni MT", Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif !important;  
+        font-family: "NeoRetroFill", Garamond, serif;
+    }
+    
+}
+a {
+    text-decoration: none;
+    color: inherit;
+
+}
+body {
+    position: relative;
+}
+.loading-page {
+    min-height: 100vh;
+}
