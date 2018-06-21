@@ -136,17 +136,6 @@ class Listing(models.Model):
     def __str__(self):
         return self.street_address
 
-    def save(self, *args, **kwargs):
-        if not self.lat:
-            # This code only happens if the objects is
-            # not in the database yet. Otherwise it would
-            # have pk
-            from hfl.utils import get_lat_lng
-            lat_lng = get_lat_lng(self)
-            if lat_lng:
-                self.lat = lat_lng['lat']
-                self.lng = lat_lng['lng']
-        super(Listing, self).save(*args, **kwargs)
 
     @property
     def features(self):

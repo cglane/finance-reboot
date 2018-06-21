@@ -17,13 +17,6 @@ csv_map = {
 
 }
 
-def get_lat_lng(listing):
-    import googlemaps
-    gmaps = googlemaps.Client(key='AIzaSyCIsi7ZYrRh-RSsxgln8VBvIfH9BheSSNI')
-    geocode_address = "{0},  , SC, {1}".format(listing.street_address, listing.zip)
-    geocode_result = gmaps.geocode(geocode_address)
-    if geocode_result:
-        return geocode_result[0]['geometry']['location']
 
 
 def getStreetAddress(csv_obj):
