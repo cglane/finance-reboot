@@ -19,10 +19,13 @@ import {
   Switch
 } from 'react-router-dom'
 
+const reload = () => window.location.reload();
+
 const Root = () => (
   <MuiThemeProvider>
   <Router>
     <div>
+    <Route path="/hflsitemap.xml" onEnter={reload} />
     <DefaultHeader/>
       <Switch>
         <Route exact path="/" component={LandingPage}/>
