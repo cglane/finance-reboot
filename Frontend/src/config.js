@@ -46,7 +46,7 @@ const config = {
     shortText: 120,
     longText: 200,
     copyright: '© 2018 Holcombe Fair & Lane, LLC',
-    domain: (process.env.NODE_ENV === 'development')?'http://localhost:8000/api/':'https://admin.hflcharleston.com/api/',
+    domain: (process.env.NODE_ENV === 'development')?'https://admin.hflcharleston.com/api/':'https://admin.hflcharleston.com/api/',
     youtubeIcon: 'https://s3.amazonaws.com/www.hflcharleston.com/youtube.png',
     instagamIcon: 'https://s3.amazonaws.com/www.hflcharleston.com/instagram.png',
     center: {lat: 32.8081165, lng: -79.9466847},
