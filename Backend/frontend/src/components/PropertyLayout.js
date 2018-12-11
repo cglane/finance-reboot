@@ -6,6 +6,7 @@ import Chips from './Chips'
 import CustomCarousel from './Carousel'
 import DataProvider from './DataProvider'
 import AgentCard from './AgentCard'
+import FlipCardListing from './FlipCardListing'
 
 const PropertyLayout = ({ data }) =>
 {
@@ -46,7 +47,7 @@ const PropertyLayout = ({ data }) =>
             </div>
             {/* Holds listing information */}
             <div className="col-md-6 property-info-wrapper">
-                <p>hello world</p>
+                <FlipCardListing data={data}/>
             </div>
        </div>
 

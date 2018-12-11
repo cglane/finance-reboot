@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'hfl',
     'frontend',
-    'livereload'
+    # 'livereload'
 ]
 REST_FRAMEWORK = {
     # Use hyperlinked styles by default.
@@ -76,7 +76,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'livereload.middleware.LiveReloadScript',
+    # 'livereload.middleware.LiveReloadScript',
 
 ]
 
