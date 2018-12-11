@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "react-modal": "^3.3.1",
     "react-popup": "^0.9.2",
-    "react-modal": "^3.3.1"
+    "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.2.0",
@@ -21,7 +22,7 @@
     "webpack-cli": "^3.1.2"
   },
   "scripts": {
-    "dev": "webpack --mode development ./Backend/frontend/src/index.js --output ./Backend/frontend/static/frontend/main.js",
+    "dev": "webpack --mode development ./Backend/frontend/src/index.js --output ./Backend/frontend/static/frontend/main.js --watch",
     "build": "webpack --mode production ./Backend/frontend/src/index.js --output ./Backend/frontend/static/frontend/main.js"
   },
   "repository": {

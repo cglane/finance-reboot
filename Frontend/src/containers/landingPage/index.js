@@ -47,7 +47,7 @@ const LandingPage = createReactClass({
              <LoadingPage dataLoaded={this.state.videoReady}/> 
             {
           (landingContent)?
-            <LandingVideos landingContent={landingContent}isMobile={this.state.isMobile} onReady={this.onReady}/>
+            <LandingVideos landingContent={landingContent} isMobile={this.state.isMobile} onReady={this.onReady}/>
             :
             ''
           }  

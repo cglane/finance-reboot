@@ -49,7 +49,9 @@ class ListingDetailView(generics.ListAPIView):
         This view should return a list of all the purchases
         for the currently authenticated user.
         """
+        print('this one')
         name = self.kwargs['name']
+        print(name, 'name')
         if name:
             listing = Listing.objects.filter(
                 street_address__iexact=name)

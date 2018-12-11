@@ -70,7 +70,6 @@ class ListingDetailSerializer(serializers.ModelSerializer):
         fields = ('__all__')
         extra_fields = ['features']
         removed_fields = ['listing_features', 'id', 'display_listing']
-
     def get_field_names(self, declared_fields, info):
         expanded_fields = super(ListingDetailSerializer,
                                 self).get_field_names(declared_fields, info)
