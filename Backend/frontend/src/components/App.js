@@ -5,7 +5,7 @@ import Table from "./Table.js";
 import PropertyLayout from "./PropertyLayout.js"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
-
+import Header from './Header'
 import '../styles.scss'
 
 const Thing = () => (
@@ -32,6 +32,7 @@ const EstateProperty = (props) => {
 const App = () => (
   <Router>
     <div>
+      <Header/>
       <Route exact path="/landing" component={Thing} />
       <Route exact path="/estate_property/:name?" component={EstateProperty}/>  
     </div>

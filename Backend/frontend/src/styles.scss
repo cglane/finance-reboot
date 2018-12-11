@@ -1,17 +1,118 @@
+
+body{
+    font-family: "NeoRetroFill", Garamond, serif;
+    color: #636363;
+    font-size: 1.2em;
+    overflow-x: hidden !important;
+}
+a{
+    text-decoration: none;
+    color:black;
+    &:hover{
+        text-decoration:none;
+        font-weight:none
+    }
+}
+
 .background-image{
-    position: absolute;
+    position: fixed;
+    z-index: -1;
+    margin-left: -15px;
+    margin-top:-10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    max-width: 120vw;
+    img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        max-width:100%;
+    }
 }
 .background-image-padding{
     height: 40vh;
+}
+.keyword-block-row{
+    margin-bottom: 0px;
 }
 .keyword-block{
     max-width: 600px;
     background:white;
     margin:auto;
+    margin-bottom:0px;
+    padding: 10px;
+    ul{
+        margin-bottom: 0px;
+    }
 }
 .carousel-agent-wrapper{
-    max-width: 600px;
+    max-width: 800px;
     img{
         max-width: 100%;
+    }
+}
+.listing-block-wrapper{
+    background: white;
+    z-index: 2;
+}
+.property-info-wrapper{
+    background: white;
+    min-height: 500px;
+}
+.chip{
+    font-size: 1.1em;
+}
+
+.contact-bar{
+    width: 100%;
+    background-color: grey;
+    position: relative;
+    ul {
+        width: 100%;
+        padding: 0px;
+        text-align: center;
+        margin: 0;
+        li {
+            width: 32%;
+            padding: 0px;
+            height:20px;
+            display: inline-block;
+            font-size: .8em;
+            i, a {
+                font-size: .8em;
+                padding-right: 3px;
+                color: black !important;
+            }
+
+        }
+    }
+}
+.nav-extended{
+    background: white;
+    min-height: 100px;
+    li, a{
+        color:black;
+        text-transform: capitalize;
+        font-weight: 500;
+        
+    }
+}
+.nav-wrapper{
+    min-height: 100px;
+}
+.hide-on-med-and-down{
+    padding-top: 20px;
+    a{
+        color:rgba(0,0,0,0.77);
+        font-size: 1.2em;
+    }
+}
+
+.brand-logo{
+    img{
+        max-width: 100px;
     }
 }

@@ -162,7 +162,6 @@ const agentContentData = (agent) => {
       'title': 'Mobile Phone',
       'value': (
         <a href={`tel:+1${agent['mobile_phone_number']}`}>{formatPhoneNumber(agent['mobile_phone_number'])}</a>
-
       )
     },
     {

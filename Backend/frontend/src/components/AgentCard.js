@@ -13,6 +13,8 @@ const AgentCard = ({ data }) =>
   ) : (
     <div className="row">
     <div className="col s12 m7">
+    <h2 className="header">Agent</h2>
+
       <div className="card">
         <div className="card-image">
           <img src={data['avatar']}/>

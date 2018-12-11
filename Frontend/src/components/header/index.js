@@ -112,7 +112,7 @@ class DefaultHeader extends Component {
             return (
             <Link key={idx} to={x.path}>
               <FlatButton className="header-button header-link-common"label={x.name}  style={styles.links}/>
-            </Link>
+            </Link> 
               )
           }
         )(config.pages)

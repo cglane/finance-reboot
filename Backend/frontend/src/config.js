@@ -1,7 +1,53 @@
+import React from 'react';
+
+
 const config = {
     'domain': 'http://localhost:8000',
     'agentsPath': 'agents',
     'shortText': 120,
     'longText': 200,
+    'brandImg': 'https://s3.amazonaws.com/www.hflcharleston.com/hfl-logo.jpg',
+    'pages': [
+        {
+            'name': 'About',
+            'path': '/about'
+        },
+        {
+            'name': 'Land',
+            'path': '/land-listings'
+        },
+        {
+            'name': 'Commercial',
+            'path': '/commercial-property'
+        },
+               
+        {
+            'name': 'Residential',
+            'path': '/residential-listings'
+        },
+        {
+            'name': 'Sold',
+            'path': '/sold-listings'
+        },
+    
+       
+    ],
+    'contactFields': [
+        {
+            'title': 'Address',
+            'content': '1071 Morrison Drive Charleston, SC 29403'
+        },
+        {
+            'title': 'Telephone',
+            'content': (<a href={`tel:+1843-722-2642`}>843-722-2642</a>),
+        },
+        {
+            'title': 'Email',
+            'content': (
+                <a href={`mailto:INFO@HFLCHARLESTON.COM?Subject=Real%20Estate`} target="_top">
+                  INFO@HFLCHARLESTON.COM
+                  </a>)
+        }
+    ],
 }
 export default config
