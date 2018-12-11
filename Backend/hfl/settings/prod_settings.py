@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'hfl',
+    'frontend'
 ]
 REST_FRAMEWORK = {
     # Use hyperlinked styles by default.

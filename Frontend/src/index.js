@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-
+import ReactDOMServer from 'react-dom/server';
 import Root from './Root';
 
 
 const render = (Component) => {
-  ReactDOM.render(
+  ReactDOMServer.renderToString(
     <AppContainer>
       <Component />
     </AppContainer>,
@@ -15,7 +15,6 @@ const render = (Component) => {
 };
 
 render(Root);
-console.log(module.hot, 'hot')
 if (module.hot) {
   module.hot.accept('./Root', () => {
     const newApp = require('./Root').default;

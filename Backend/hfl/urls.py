@@ -26,11 +26,12 @@ admin.site.site_header = 'HFL Administration'
 
 urlpatterns = [
     url(r'^jet/', include('jet.urls', 'jet')),  # Django JET URLS
-    url(r'^', admin.site.urls), #Default to admin
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include(router.urls)),
     url(r'api/listings-all/', ListMapView.as_view()),
     url(r'api/listings/(?P<property_type>.+)/$', ListView.as_view()),
-    url(r'api/listing_detail/(?P<name>.+)/$', ListingDetailView.as_view())
+    url(r'api/listing_detail/(?P<name>.+)/$', ListingDetailView.as_view()),
+    url(r'^', include('frontend.urls')),  # Default to frontend urls
+
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

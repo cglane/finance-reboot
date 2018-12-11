@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'hfl',
+    'frontend'
 ]
 REST_FRAMEWORK = {
     # Use hyperlinked styles by default.
@@ -79,10 +80,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'hfl.urls'
 
+print(os.path.join(BASE_DIR, "..", "frontend"), 'path')
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, "build"), ],
+        'DIRS': [os.path.join(BASE_DIR, "build"), os.path.join(BASE_DIR, "..", "frontend") ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
