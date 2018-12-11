@@ -20,8 +20,9 @@ class DataProvider extends Component {
     if (this.props.otherparam){
       let otherParam = encodeURI(this.props.otherparam)
       console.log(otherParam, 'param')
-      // otherParam = encodeURI(otherParam.replace(/-/g, ' '))
+      otherParam = encodeURI(otherParam.replace(/-/g, ' '))
       path = `${config.domain}/${this.props.endpoint}/${otherParam}`
+      console.log(path, 'path')
     }else{
       path = `${config.domain}/${this.props.endpoint}`
     }

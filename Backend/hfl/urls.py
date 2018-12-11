@@ -32,7 +32,7 @@ urlpatterns = [
     url(r'api/listings/(?P<property_type>.+)/$', ListView.as_view()),
     url(r'api/listing_detail/(?P<name>.+)/$', ListingDetailView.as_view()),
     url(r'^landing', include('frontend.urls')),  # Default to frontend urls
-    url(r'^things', include('frontend.urls')),  # Default to frontend urls
+    url(r'^estate_property', include('frontend.urls')),  # Default to frontend urls
 
 
 

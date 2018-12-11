@@ -62,7 +62,6 @@ class ListingVideoSerializer(serializers.ModelSerializer):
 
 class ListingDetailSerializer(serializers.ModelSerializer):
     images = ImageSerializer(many=True, read_only=True)
-    # videos = ListingVideoSerializer(many=True, read_only=True)
     agent = AgentSerializer(read_only=True)
 
     class Meta:
