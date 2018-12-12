@@ -36,6 +36,10 @@ urlpatterns = [
     url(r'^landing', include('frontend.urls')),  # Default to frontend urls
     url(r'^estate_property', include('frontend.urls')),  # Default to frontend urls
     url(r'^land-listings', include('frontend.urls')),  # Default to frontend urls
+    url(r'^residential-listings', include('frontend.urls')),  # Default to frontend urls
+    url(r'^commercial-property', include('frontend.urls')),  # Default to frontend urls
+    url(r'^sold-listings', include('frontend.urls')),  # Default to frontend urls
+    url(r'^about', include('frontend.urls')),  # Default to frontend urls
 
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

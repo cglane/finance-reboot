@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
 import Header from './Header'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-
+import AboutLayout from './AboutLayout'
 import '../styles.scss'
 
 const Thing = () => (
@@ -48,14 +48,78 @@ const LandPage = () => {
   } />
   )
 }
+const CommercialPage = () => {
+  return (
+  <DataProvider firstparam='Commercial' endpoint="api/listings"
+    render={data => 
+      <div>
+            <Helmet>
+              <title>HFL</title>
+              <meta name="description" content='' />
+              <meta name="theme-color" content="#008f68" />
+            </Helmet>
+            <ListingsLayoutDynamic header="Commercial Listings" data={data}/>
+      </div>
+  } />
+  )
+}
+const ResidentialPage = () => {
+  return (
+  <DataProvider firstparam='Residential' endpoint="api/listings"
+    render={data => 
+      <div>
+            <Helmet>
+              <title>HFL</title>
+              <meta name="description" content='' />
+              <meta name="theme-color" content="#008f68" />
+            </Helmet>
+            <ListingsLayoutDynamic header="Residential Listings" data={data}/>
+      </div>
+  } />
+  )
+}
+const SoldPage = () => {
+  return (
+  <DataProvider firstparam='Sold' endpoint="api/listings"
+    render={data => 
+      <div>
+            <Helmet>
+              <title>HFL</title>
+              <meta name="description" content='' />
+              <meta name="theme-color" content="#008f68" />
+            </Helmet>
+            <ListingsLayoutDynamic header="Sold Listings" data={data}/>
+      </div>
+  } />
+  )
+}
 
+const AboutPage = () => {
+  return (
+  <DataProvider endpoint="api/about"
+    render={data => 
+      <div>
+            <Helmet>
+              <title>HFL</title>
+              <meta name="description" content={data['description']} />
+              <meta name="theme-color" content="#008f68" />
+            </Helmet>
+            <AboutLayout data={data[0]}/>
+      </div>
+  } />
+  )
+}
 const App = () => (
   <MuiThemeProvider>
     <Router>
       <div>
         <Header/>
         <Route exact path="/landing" component={Thing} />
+        <Route exact path="/about" component={AboutPage} />
         <Route exact path="/land-listings" component={LandPage} />
+        <Route exact path="/commercial-property" component={CommercialPage} />
+        <Route exact path="/residential-listings" component={ResidentialPage} />
+        <Route exact path="/sold-listings" component={SoldPage} />
         <Route exact path="/estate_property/:name?" component={EstateProperty}/> 
         <Footer/> 
       </div>
