@@ -34,6 +34,7 @@ class FlipCardAgent extends Component {
                   {
                     (data.terrastride_src)?
                     <a className="waves-effect waves-light btn-large" 
+                    target="_blank"
                     href={data.terrastride_src}>
                                         Map
                     </a>

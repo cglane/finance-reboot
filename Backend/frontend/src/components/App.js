@@ -7,6 +7,8 @@ import Footer from './Footer'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
 import Header from './Header'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 import '../styles.scss'
 
 const Thing = () => (
@@ -31,14 +33,16 @@ const EstateProperty = (props) => {
 }
 
 const App = () => (
-  <Router>
-    <div>
-      <Header/>
-      <Route exact path="/landing" component={Thing} />
-      <Route exact path="/estate_property/:name?" component={EstateProperty}/> 
-      <Footer/> 
-    </div>
-  </Router>
+  <MuiThemeProvider>
+    <Router>
+      <div>
+        <Header/>
+        <Route exact path="/landing" component={Thing} />
+        <Route exact path="/estate_property/:name?" component={EstateProperty}/> 
+        <Footer/> 
+      </div>
+    </Router>
+  </MuiThemeProvider>
 );
 
 const wrapper = document.getElementById("app");

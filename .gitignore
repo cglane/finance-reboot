@@ -13,7 +13,9 @@ Frontend/static
 Backend/exports
 cloud_sql_proxy
 Frontend/build
+Backend/venv
 venv
+Backend/frontend/static/frontend/main.js
 Backend/media
 Backend/hfl/..media
 node_modules

@@ -44,9 +44,16 @@ const mainImage = (listing) => {
     })(objKeys)
     return returnList
   }
+  const listingPath = (listing) => {
+    if (listing['property_name']) {
+        return `/estate_property/${listing['property_name'].split(' ').join('-')}`
+      }
+      return `/estate_property/${listing['street_address'].split(' ').join('-')}`
+    }
 
   export {
       mainImage,
       mapIndexed,
-      detailsData
+      detailsData,
+      listingPath
   }

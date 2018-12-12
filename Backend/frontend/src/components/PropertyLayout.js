@@ -7,6 +7,7 @@ import CustomCarousel from './Carousel'
 import DataProvider from './DataProvider'
 import AgentCard from './AgentCard'
 import FlipCardListing from './FlipCardListing'
+import OtherListings from'./OtherListings'
 
 const PropertyLayout = ({ data }) =>
 {
@@ -52,7 +53,9 @@ const PropertyLayout = ({ data }) =>
        </div>
 
        {/* Other Listings */}
-       <div className="col-md-12"></div>
+       <div className="col-md-12">
+            <OtherListings data={data}/>
+       </div>
    </div>
   )
 }
