@@ -306,3 +306,26 @@ a{
         transition:color 2s ;
     }
 }
+.pull-right{
+    float: right;
+}
+.about-row{
+    min-height: 400px;
+}
+.flip-card-about{
+    height: inherit;
+    padding: 20px;
+}
+.front-card-explore {
+    color: red;
+    font-size: 1.5em !important;
+    transition: font-size 1s;
+    border:solid red 1px;
+    width:150px;
+    &:hover {
+        font-size: 1.6em !important;
+    }
+}
+.about-image-wrapper{
+    max-width: 100%;
+}

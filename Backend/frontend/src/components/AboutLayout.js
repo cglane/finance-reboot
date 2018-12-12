@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { pluck } from 'ramda'
 import {mapIndexed} from '../helpers'
+import FlipCardAbout from './FlipCardAbout'
+
 const AboutLayout = ({ data }) =>
 {
     console.log(data, 'data')
@@ -36,22 +38,24 @@ const AboutLayout = ({ data }) =>
             </div>
         </div>
        {/* Container for listings cards */}
-       <div className="row text-center listing-block-wrapper">
                     {
                         mapIndexed((x, idx) => 
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="col-md-6"></div>
-                                    <div class="col-md-6"></div>
+                            <div key={idx}className="row about-row">
+                                <div className="col-md-12">
+                                    <div className="col-md-6 about-image-wrapper">
+                                        <img src={x['image']}/>
+                                    </div>
+                                    <div className="col-md-6 pull-right flip-card-about">
+                                        <FlipCardAbout data={x}/>
+                                    </div>
                                 </div>
                             </div>
                         )(data['options'])
                     }
        </div>
-   </div>
   )
 }
   AboutLayout.propTypes = {
-  data: PropTypes.array.isRequired
+  data: PropTypes.object.isRequired
 };
 export default AboutLayout;
