@@ -218,7 +218,7 @@ const getFilters = (listArray, delimeter=',') => {
         const filterTwo = dollarToInt(filterRange[1])
           mapIndexed((x, itr) => {
             if(x.price_formatted){
-              const listing_price = dollarToInt(x.price_formatted)
+              const listing_price = dollarToInt(x.price)
               if (listing_price >= filterOne && listing_price <= filterTwo) {
                 filteredListings.push(itr)
               }

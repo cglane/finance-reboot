@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import DataProvider from "./DataProvider";
 import Table from "./Table";
 import PropertyLayout from "./PropertyLayout"
-import ListingsLayout from './ListingsLayout'
 import ListingsLayoutDynamic from './ListingsLayoutDynamic'
 import Footer from './Footer'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";

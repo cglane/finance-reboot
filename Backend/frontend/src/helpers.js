@@ -11,14 +11,25 @@ import {
     uniq,
     contains,
   } from 'ramda'
+import config from './config'
 
 const getFilters = (listArray, delimeter=',') => {
   const listFeatures = pluck('features')(listArray)
   const mergeLists = [].concat.apply([], listFeatures);
   const uniqueFeatures = uniq(mergeLists)
-  return uniqueFeatures
-  }
+  const filters = config['price_range'].concat(uniqueFeatures)
 
+  return filters
+  }
+  const dollarToInt = (dollarString) => {
+    const price_no_commas = dollarString.replace(',', '')
+    const price_no_dollar = price_no_commas.replace('$', '')
+    try {
+      return parseInt(price_no_dollar)
+    } catch (error) {
+      return 0
+    }
+  }
   const filterListings = (filter, listings) => {
     let filteredListingsIdx = []
     const filter_lower = filter.toLowerCase()
@@ -29,8 +40,8 @@ const getFilters = (listArray, delimeter=',') => {
         const filterOne = dollarToInt(filterRange[0])
         const filterTwo = dollarToInt(filterRange[1])
           mapIndexed((x, itr) => {
-            if(x.price_formatted){
-              const listing_price = dollarToInt(x.price_formatted)
+            if(x.price){
+              const listing_price = parseInt(x.price)
               if (listing_price >= filterOne && listing_price <= filterTwo) {
                 filteredListingsIdx.push(itr)
               }

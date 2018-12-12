@@ -113,7 +113,7 @@ class ListingSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Listing
-        fields = ('description', 'images', 'price_formatted', 'property_name','price_sqft_formatted', 'terrastride_src',
+        fields = ('description', 'images', 'price', 'price_formatted', 'property_name','price_sqft_formatted', 'terrastride_src',
                   'features', 'street_address', 'display_listing', 'lat', 'lng', 'status','property_type_choices', 'closing_date')
 
 class ListingMapSerializer(serializers.ModelSerializer):

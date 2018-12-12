@@ -26,7 +26,7 @@ class ListingsLayoutDynamic extends Component {
         <div className="container-fluid">
         {/* Image */}
         <div className="row background-image">
-                <img src={mainImage(data[0])}/>
+                <img src={mainImage(this.props.data[0])}/>
         </div>
         {/* Bump */}
         <div className="row background-image-padding">
@@ -37,11 +37,10 @@ class ListingsLayoutDynamic extends Component {
         <div className="row keyword-block-row">
             <div className="col-md-12 text-center">
                 <div className="keyword-block">
-                    {/* < data={data['features']}/> */}
                     <CustomAutoComplete
-                    filters={this.state.filters}
-                    updateFilter={this.updateFilter}
-                    searchText="Search location, features, or price"/>
+                        filters={this.state.filters}
+                        updateFilter={this.updateFilter}
+                        searchText="Search location, features, or price"/>
                 </div>
             </div>
         </div>
