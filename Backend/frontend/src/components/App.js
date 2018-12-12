@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import DataProvider from "./DataProvider";
-import Table from "./Table.js";
-import PropertyLayout from "./PropertyLayout.js"
+import Table from "./Table";
+import PropertyLayout from "./PropertyLayout"
+import Footer from './Footer'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
 import Header from './Header'
@@ -34,7 +35,8 @@ const App = () => (
     <div>
       <Header/>
       <Route exact path="/landing" component={Thing} />
-      <Route exact path="/estate_property/:name?" component={EstateProperty}/>  
+      <Route exact path="/estate_property/:name?" component={EstateProperty}/> 
+      <Footer/> 
     </div>
   </Router>
 );

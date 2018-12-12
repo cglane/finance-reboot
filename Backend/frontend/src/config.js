@@ -7,6 +7,17 @@ const config = {
     'shortText': 120,
     'longText': 200,
     'brandImg': 'https://s3.amazonaws.com/www.hflcharleston.com/hfl-logo.jpg',
+    'socialMedia': {
+        'instagram': 'https://www.instagram.com/holcombefairlane/',
+        'facebook': 'https://www.facebook.com/HFLCharleston',
+        'googlePlus': 'https://www.youtube.com/channel/UCEZ5xDIq0Tr4dfO0WhnDz6A',
+        'linkedIn': 'https://www.linkedin.com/company/8509331/',
+        'youtube': 'https://www.youtube.com/channel/UCEZ5xDIq0Tr4dfO0WhnDz6A',
+        
+    },
+    'copyright': '© 2018 Holcombe Fair & Lane, LLC',
+    'youtubeIcon': 'https://s3.amazonaws.com/www.hflcharleston.com/youtube.png',
+    'instagamIcon': 'https://s3.amazonaws.com/www.hflcharleston.com/instagram.png',
     'pages': [
         {
             'name': 'About',

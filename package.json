@@ -17,6 +17,7 @@
     "react-popup": "^0.9.2",
     "react-responsive-carousel": "^3.1.43",
     "react-router-dom": "^4.3.1",
+    "react-share": "^2.4.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1"
   },

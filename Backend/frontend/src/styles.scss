@@ -92,7 +92,7 @@ a{
 }
 .nav-extended{
     background: white;
-    min-height: 100px;
+    min-height: 120px;
     li, a{
         color:black;
         text-transform: capitalize;
@@ -101,18 +101,92 @@ a{
     }
 }
 .nav-wrapper{
-    min-height: 100px;
+    min-height: 120px;
 }
 .hide-on-med-and-down{
     padding-top: 20px;
     a{
-        color:rgba(0,0,0,0.77);
-        font-size: 1.2em;
-    }
+        color:rgba(0,0,0,0.67);
+        font-size: 18px;
+        font-weight: 500;
+        font-family: "NeoRetroFill", Garamond, serif !important;
+    } 
 }
 
 .brand-logo{
+    padding: 10px !important;
     img{
         max-width: 100px;
     }
+}
+.page-footer{
+    background: black;
+}
+.footer-links {
+    width: 50%;
+    margin: auto;
+    padding-top: 20px;
+    color: white;
+    min-width: 300px;
+    li {
+        display:inline;    
+        margin: 2%;  
+        font-size: 1.2rem;
+        letter-spacing: .03em;
+        color: #737373;
+        transition: color 1s;
+        a{
+            color: #737373;
+        }
+        &:hover {
+            transition: color 1s;
+            color: white;
+        }
+        &:after {
+            content: ' ';
+            width: 1px;
+            height: 100%;
+            font-size: .1em;
+            top: -10px;
+            left: -10px;
+            top: 0;
+            background: white; 
+            margin-left: 3%;
+        }
+    }
+}
+.contact-label {
+    color: white;
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+.contact-content{
+    color:#737373;
+    font-size: 1.2em;
+    a{
+        color:#737373;
+    }
+}
+.button-share{
+    padding: 20px;
+}
+.custom-share-icon {
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    border-radius: 15px;
+    background: white;
+    display: inline-block;
+    img {
+        max-width: 100%;
+    }
+}
+.copyright-block{
+    p{
+        width: 100%;
+        color:#737373;
+    }
+}
+.links-footer-block{
+    padding-top: 20px !important;
 }
