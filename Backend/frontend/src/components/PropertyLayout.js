@@ -54,7 +54,14 @@ const PropertyLayout = ({ data }) =>
 
        {/* Other Listings */}
        <div className="col-md-12">
-            <OtherListings data={data}/>
+            <DataProvider firstparam={data['property_type']} secondparam={data['property_name']} endpoint="api/other_listings"
+                render={data => {
+                    if(!data){
+                        return ''
+                    }
+                    return <OtherListings data={data}/>
+                }
+            }/>
        </div>
    </div>
   )

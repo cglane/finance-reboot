@@ -6,7 +6,8 @@ class DataProvider extends Component {
   static propTypes = {
     endpoint: PropTypes.string.isRequired,
     render: PropTypes.func.isRequired,
-    otherparam: PropTypes.string
+    firstparam: PropTypes.string,
+    secondparam:PropTypes.string
   };
 
   state = {
@@ -17,12 +18,16 @@ class DataProvider extends Component {
 
   componentDidMount() {
     let path = ''
-    if (this.props.otherparam){
-      let otherParam = encodeURI(this.props.otherparam)
-      console.log(otherParam, 'param')
+    if (this.props.firstparam && this.props.secondparam){
+      let first = encodeURI(this.props.firstparam)
+      let second = encodeURI(this.props.secondparam)
+      first = encodeURI(first.replace(/-/g, ' '))
+      second = encodeURI(first.replace(/-/g, ' '))
+      path = `${config.domain}/${this.props.endpoint}/${first}/${second}`
+    } else if(this.props.firstparam){
+      let otherParam = encodeURI(this.props.firstparam)
       otherParam = encodeURI(otherParam.replace(/-/g, ' '))
       path = `${config.domain}/${this.props.endpoint}/${otherParam}`
-      console.log(path, 'path')
     }else{
       path = `${config.domain}/${this.props.endpoint}`
     }

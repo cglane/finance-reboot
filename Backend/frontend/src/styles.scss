@@ -214,7 +214,7 @@ a{
     text-align: left;
     left: 0px;
     float: left;
-    width: 4000px;
+    min-width: 5000px;
     margin-left: 0px;
 }
 .scroll-listings {
@@ -241,5 +241,9 @@ a{
     }
 }
 .listing-card-wrapper{
-    width: 300px;
+    position: relative;
+    display: inline-block;
+    div{
+        max-width: 300px;
+    }
 }

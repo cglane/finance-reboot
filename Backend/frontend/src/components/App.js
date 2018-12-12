@@ -18,7 +18,7 @@ const Thing = () => (
 
 const EstateProperty = (props) => {
   return (
-  <DataProvider otherparam={props.match.params.name} endpoint="api/listing_detail"
+  <DataProvider firstparam={props.match.params.name} endpoint="api/listing_detail"
     render={data => 
       <div>
             <Helmet>

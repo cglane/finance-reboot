@@ -103,23 +103,13 @@ class OtherListings extends Component {
                         </div>
                     </div>
 
-                     <div style={this.state.scrollStyles}className="row other-listings-wrapper scroll-horizontal">
-                        <ListingCard data={this.props.data}/>
+                     <div style={this.state.scrollStyles}className="other-listings-wrapper scroll-horizontal">
 
-                        {/* {
-                        // (this.state.cardData)?
-                        //     mapIndexed((x, idx) => {
-                        //         const details = this.props.dataFormatter(x, 'listing-card-scroll', this.props.path)
-                        //         return (
-                        //             <ListingCardCommon 
-                        //             key={idx} 
-                        //             {...details}
-                        //             />
-                        //         )
-                        //     })(this.state.cardData)
-                        //     :
-                        //     ''
-                        } */}
+                        {
+                            mapIndexed((x, idx) => {
+                                return <ListingCard key={idx} data={x}/>
+                            })(this.props.data)
+                        }
                     </div>
                 </div>
             )

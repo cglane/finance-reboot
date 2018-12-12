@@ -81,6 +81,26 @@ class ListView(generics.ListAPIView):
                  images__isnull=False, status__in=['Sold', 'Leased']).distinct()
         return Listing.objects.filter(images__isnull=False, ).exclude(status='Sold').exclude(status='Leased').distinct()
 
+class OtherListingsView(generics.ListAPIView):
+    serializer_class = ListingSerializer
+
+    def get_queryset(self):
+        """
+        This view should return a list of all the purchases
+        for the currently authenticated user.
+
+        Remove Sold from 'ALL'
+        """
+        property_type = self.kwargs['property_type']
+        property_name = self.kwargs['property_name']
+        if property_type:
+            return Listing.objects.filter(images__isnull=False, property_type=property_type,)\
+                .exclude(status='Sold')\
+                .exclude(property_name=property_name)\
+                .exclude(status='Leased')\
+                .distinct()[:5]
+
+
 
 class AgentListingViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Agent.objects.all()
