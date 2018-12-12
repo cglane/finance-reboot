@@ -112,6 +112,9 @@ const mainImage = (listing) => {
       return `/estate_property/${listing['street_address'].split(' ').join('-')}`
     }
 
+    const agentPath = (agent) => {
+      return `/agents/${agent['url_path']}`
+    }
   export {
       mainImage,
       mapIndexed,
@@ -119,5 +122,6 @@ const mainImage = (listing) => {
       listingPath,
       getFilters,
       filterListings,
-      pluckAgent
+      pluckAgent,
+      agentPath
   }

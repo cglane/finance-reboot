@@ -36,7 +36,7 @@ class FlipCardAgent extends Component {
             </div>
           </div>
             <div  key="back">
-                 <p className="left-align"> 
+                 <div className="left-align"> 
                     <div className="agent-contact-links">
                             <ul>
                                 <li key={1}>
@@ -67,7 +67,7 @@ class FlipCardAgent extends Component {
 
                             </ul>
                 </div>
-                 </p>
+                 </div>
             </div>
          </ReactCardFlip>
       )
