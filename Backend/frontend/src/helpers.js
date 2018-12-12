@@ -13,6 +13,8 @@ import {
   } from 'ramda'
 import config from './config'
 
+const pluckAgent = (name, agents) => find(propEq('url_path', name))(agents)
+
 const getFilters = (listArray, delimeter=',') => {
   const listFeatures = pluck('features')(listArray)
   const mergeLists = [].concat.apply([], listFeatures);
@@ -116,5 +118,6 @@ const mainImage = (listing) => {
       detailsData,
       listingPath,
       getFilters,
-      filterListings
+      filterListings,
+      pluckAgent
   }

@@ -15,19 +15,19 @@ const Header = ( ) =>
       <div>
         <div className="contact-bar">
             <ul>
-                <li>
+                <li key={1}>
                     <i className="material-icons">
                         phone
                     </i>
                     {config.contactFields[1].content}
                 </li>
-                <li>
+                <li key={2}>
                     <i className="material-icons">
                     location_on
                     </i>
                     <a>{config.contactFields[0].content}</a>
                 </li>
-                <li>
+                <li key={3}>
                     <i className="material-icons">
                     email
                     </i>
@@ -43,7 +43,7 @@ const Header = ( ) =>
                 <ul id="nav-mobile" className="right hide-on-med-and-down">
                     {
                         mapIndexed((x, i)=> (
-                            <li><a key={i} href={x['path']}>{x['name']}</a></li>
+                            <li key={i}><a  href={x['path']}>{x['name']}</a></li>
                         ))(config.pages)
                     }
                 </ul>
@@ -52,7 +52,7 @@ const Header = ( ) =>
             <ul className="sidenav" id="mobile-demo">
                 {
                         mapIndexed((x, i)=> (
-                            <li><a key={i}href={x['path']}>{x['name']}</a></li>
+                            <li key={i}><a href={x['path']}>{x['name']}</a></li>
                         ))(config.pages)
                     }
          </ul>

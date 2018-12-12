@@ -35,11 +35,13 @@ urlpatterns = [
     url(r'api/listing_detail/(?P<name>.+)/$', ListingDetailView.as_view()),
     url(r'^landing', include('frontend.urls')),  # Default to frontend urls
     url(r'^estate_property', include('frontend.urls')),  # Default to frontend urls
+    url(r'^agents', include('frontend.urls')),  # Default to frontend urls
     url(r'^land-listings', include('frontend.urls')),  # Default to frontend urls
     url(r'^residential-listings', include('frontend.urls')),  # Default to frontend urls
     url(r'^commercial-property', include('frontend.urls')),  # Default to frontend urls
     url(r'^sold-listings', include('frontend.urls')),  # Default to frontend urls
     url(r'^about', include('frontend.urls')),  # Default to frontend urls
+    url(r'^$', include('frontend.urls')),  # Default to frontend urls
 
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

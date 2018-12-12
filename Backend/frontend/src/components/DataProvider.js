@@ -31,7 +31,6 @@ class DataProvider extends Component {
     }else{
       path = `${config.domain}/${this.props.endpoint}`
     }
-    console.log(path, 'path')
     fetch(path)
       .then(response => {
         if (response.status !== 200) {
@@ -39,7 +38,7 @@ class DataProvider extends Component {
         }
         return response.json()
       })
-      .then(data => {console.log(data, 'data'); this.setState({ data: data, loaded: true })})
+      .then(data => { this.setState({ data: data, loaded: true })})
       .catch(err => console.log(err, 'err'))
   }
 

@@ -160,10 +160,11 @@ USE_TZ = True
 ENV_PATH = os.path.abspath(os.path.dirname(__file__))
 MEDIA_ROOT = os.path.join(ENV_PATH, 'media/')
 MEDIA_URL = '/media/'
-STATIC_URL = '/static/'
+# STATIC_URL = '/static/'
 STATIC_BASE = 'http://localhost:8000/'
 STATICFILES_DIRS = (
     location('media'),
+
 )
 ## HFL-USER
 

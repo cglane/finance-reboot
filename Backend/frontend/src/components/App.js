@@ -10,7 +10,9 @@ import { Helmet } from 'react-helmet';
 import Header from './Header'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AboutLayout from './AboutLayout'
+import {pluckAgent} from '../helpers'
 import '../styles.scss'
+import AgentLayout from "./AgentLayout";
 
 const Thing = () => (
   <DataProvider endpoint="api/listings-all/"
@@ -109,6 +111,29 @@ const AboutPage = () => {
   } />
   )
 }
+const AgentPage = (props) => {
+  return (
+  <DataProvider  endpoint="api/agents"
+    render={agents => 
+      {
+        console.log(agents, 'agents')
+        console.log(props.match.params.name, 'name')
+        const agent = pluckAgent(props.match.params.name, agents)
+        console.log(agent, 'ag')
+        return (
+          <div>
+            <Helmet>
+              <title>{`${agent['first_name']} ${agent['last_name']}`}</title>
+              <meta name="description" content={agent['description']} />
+              <meta name="theme-color" content="#008f68" />
+            </Helmet>
+            <AgentLayout data={agent} agents={agents}/>
+          </div>  
+        )
+      }
+  } />
+  )
+}
 const App = () => (
   <MuiThemeProvider>
     <Router>
@@ -121,6 +146,7 @@ const App = () => (
         <Route exact path="/residential-listings" component={ResidentialPage} />
         <Route exact path="/sold-listings" component={SoldPage} />
         <Route exact path="/estate_property/:name?" component={EstateProperty}/> 
+        <Route exact path="/agents/:name?" component={AgentPage}/> 
         <Footer/> 
       </div>
     </Router>
