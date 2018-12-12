@@ -352,20 +352,14 @@ a{
         margin: 10px;
     }
 }
-.scroll-card-agent{
-    margin: auto;
-    flex-shrink: 2;
-    display: inline-block;  
-    transition: opacity 3s;
-    font-family: "NeoRetroFill", Garamond, serif;
-    height: 500px;
-    overflow: hidden;
-    padding: 10px;
-
-    img {
-        max-height: 300px;
-        overflow: hidden;
+#menu-icon-headers {
+    color: black;
+    i{
+        padding-left:10px;
     }
+}
+#mobile-demo{
+    transition: transform 1s;
 }
 @media only screen and (max-width: 1000px){
     .listing-card-small{
