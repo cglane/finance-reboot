@@ -66,24 +66,13 @@ class OtherListings extends Component {
         if (this.state.pageWidth < 1000) {
             return (
                 <div className="row">
-                    <div className="col s12 other-listings-wrapper">
+                    <div className="col s12 other-listings-wrapper mobile">
                     <h3> Other Listings </h3>
-                        <ListingCard data={this.props.data}/>
-                        {/* {
-                        (this.state.cardData)?
+                        {
                             mapIndexed((x, idx) => {
-                                const details = this.props.dataFormatter(x, 'listing-card-small', this.props.path)
-                                return (
-                                    <ListingCardCommon 
-                                    key={idx} 
-                                    {...details}
-                                    
-                                    />
-                                )
-                            })(this.state.cardData)
-                            :
-                            ''
-                        } */}
+                                return <ListingCard key={idx} customClass='mobile-card' data={x}/>
+                            })(this.props.data)
+                        }
                     </div>
                 </div>
     
@@ -107,7 +96,7 @@ class OtherListings extends Component {
 
                         {
                             mapIndexed((x, idx) => {
-                                return <ListingCard key={idx} data={x}/>
+                                return <ListingCard key={idx} customClass="scroll-card" data={x}/>
                             })(this.props.data)
                         }
                     </div>

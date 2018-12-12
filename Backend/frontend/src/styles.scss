@@ -240,10 +240,42 @@ a{
         background: rgba(0, 0, 0, 0.74)
     }
 }
-.listing-card-wrapper{
-    position: relative;
-    display: inline-block;
-    div{
-        max-width: 300px;
+
+.listing-card {
+    margin: auto;
+    flex-shrink: 2;
+    display: inline-block;  
+    transition: opacity 3s;
+    font-family: "NeoRetroFill", Garamond, serif;
+}
+.listing-card-full {
+    width: 50%;
+    margin: auto;
+}
+
+.hover-hide-background {
+    &:hover {
+        background: rgba(0, 0, 0, 0.1) !important;
     }
+}
+.listing-card-large {
+    width: 25%;
+    height: 500px;
+    overflow: hidden;
+    padding: 10px;
+
+    img {
+        max-height: 300px;
+        overflow: hidden;
+    }
+}
+.listing-card-large{
+    width: 20%;
+}
+.scroll-card{
+    max-width: 500px;
+}
+.mobile-card{
+    max-width: 100%;
+    width: 100%;
 }

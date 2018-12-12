@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import DataProvider from "./DataProvider";
 import Table from "./Table";
 import PropertyLayout from "./PropertyLayout"
+import ListingsLayout from './ListingsLayout'
 import Footer from './Footer'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
@@ -32,12 +33,29 @@ const EstateProperty = (props) => {
   )
 }
 
+const LandPage = () => {
+  return (
+  <DataProvider firstparam='Land' endpoint="api/listings"
+    render={data => 
+      <div>
+            <Helmet>
+              <title>HFL</title>
+              <meta name="description" content='' />
+              <meta name="theme-color" content="#008f68" />
+            </Helmet>
+            <ListingsLayout data={data}/>
+      </div>
+  } />
+  )
+}
+
 const App = () => (
   <MuiThemeProvider>
     <Router>
       <div>
         <Header/>
         <Route exact path="/landing" component={Thing} />
+        <Route exact path="/land-listings" component={LandPage} />
         <Route exact path="/estate_property/:name?" component={EstateProperty}/> 
         <Footer/> 
       </div>

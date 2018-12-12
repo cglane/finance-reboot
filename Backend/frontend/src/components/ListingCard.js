@@ -6,11 +6,11 @@ import {Card,CardMedia, CardTitle, CardText} from 'material-ui/Card';
 
 import config from '../config'
 
-const ListingCard = ({ data }) =>
+const ListingCard = ({ data, customClass }) =>
   !data ? (
     <p>No Data</p>
   ) : (
-    <div className="listing-card-wrapper">
+    <div className={`listing-card listing-card-large ${customClass}`}>
         <Card>
           <Link to={listingPath(data)}>
           <CardMedia
@@ -37,6 +37,7 @@ const ListingCard = ({ data }) =>
   </div>
   );
   ListingCard.propTypes = {
-  data: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired,
+  customClass: PropTypes.string
 };
 export default ListingCard;
