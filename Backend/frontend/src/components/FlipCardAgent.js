@@ -35,9 +35,38 @@ class FlipCardAgent extends Component {
                   </div>
             </div>
           </div>
-            <div onClick={this.handleClick} key="back">
+            <div  key="back">
                  <p className="left-align"> 
-                 <Collection data={detailsData(data)}/>
+                    <div className="agent-contact-links">
+                            <ul>
+                                <li key={1}>
+                                    <i className="material-icons">
+                                        phone
+                                    </i>
+                                    <a href={`tel:+1${data['mobile_phone_number']}`}>{data['mobile_phone_number']}</a>
+                                </li>
+                                <li key={2}>
+                                    <i className="material-icons">
+                                    work
+                                    </i>
+                                    <a href={`tel:+1${data['office_phone_number']}`}>{data['office_phone_number']}</a>
+                                </li>
+                                <li key={3}>
+                                    <i className="material-icons">
+                                    email
+                                    </i>
+                                    <a href={`mailto:${data['email']}?Subject=Real%20Estate`} target="_top">
+                  {data['email']}
+                  </a>
+                                </li>
+                                <div onClick={this.handleClick} className="front-card-explore text-center">
+                                    <span>
+                                            Back
+                                    </span>
+                              </div>
+
+                            </ul>
+                </div>
                  </p>
             </div>
          </ReactCardFlip>

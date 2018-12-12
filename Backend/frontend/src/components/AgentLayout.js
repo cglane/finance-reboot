@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import key from "weak-key";
 import FlipCardAgent from "./FlipCardAgent";
+import OtherAgents from './OtherAgents'
 
 const AgentLayout = ({ data, agents }) =>
 {
@@ -24,14 +25,7 @@ const AgentLayout = ({ data, agents }) =>
 
        {/* Other Listings */}
        <div className="col-md-12">
-            {/* <DataProvider endpoint="api/agents"
-                render={data => {
-                    if(!data){
-                        return ''
-                    }
-                    // return <OtherListings data={data}/>
-                }
-            }/> */}
+            <OtherAgents data={agents}/>
        </div>
    </div>
   )
