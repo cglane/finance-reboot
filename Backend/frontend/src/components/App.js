@@ -4,6 +4,7 @@ import DataProvider from "./DataProvider";
 import Table from "./Table";
 import PropertyLayout from "./PropertyLayout"
 import ListingsLayout from './ListingsLayout'
+import ListingsLayoutDynamic from './ListingsLayoutDynamic'
 import Footer from './Footer'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
@@ -43,7 +44,7 @@ const LandPage = () => {
               <meta name="description" content='' />
               <meta name="theme-color" content="#008f68" />
             </Helmet>
-            <ListingsLayout data={data}/>
+            <ListingsLayoutDynamic header="Land Listings" data={data}/>
       </div>
   } />
   )

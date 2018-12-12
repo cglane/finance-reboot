@@ -247,19 +247,6 @@ a{
     display: inline-block;  
     transition: opacity 3s;
     font-family: "NeoRetroFill", Garamond, serif;
-}
-.listing-card-full {
-    width: 50%;
-    margin: auto;
-}
-
-.hover-hide-background {
-    &:hover {
-        background: rgba(0, 0, 0, 0.1) !important;
-    }
-}
-.listing-card-large {
-    width: 25%;
     height: 500px;
     overflow: hidden;
     padding: 10px;
@@ -269,8 +256,15 @@ a{
         overflow: hidden;
     }
 }
-.listing-card-large{
-    width: 20%;
+
+.hover-hide-background {
+    &:hover {
+        background: rgba(0, 0, 0, 0.1) !important;
+    }
+}
+
+.listing-card-small{
+    width: 15%;
 }
 .scroll-card{
     max-width: 500px;
@@ -278,4 +272,9 @@ a{
 .mobile-card{
     max-width: 100%;
     width: 100%;
+}
+.listings-header{
+    font-size: 3.12rem;
+    line-height: 110%;
+    color:black;
 }

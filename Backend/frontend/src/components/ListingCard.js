@@ -10,7 +10,7 @@ const ListingCard = ({ data, customClass }) =>
   !data ? (
     <p>No Data</p>
   ) : (
-    <div className={`listing-card listing-card-large ${customClass}`}>
+    <div className={`listing-card ${customClass}`}>
         <Card>
           <Link to={listingPath(data)}>
           <CardMedia

@@ -12,6 +12,54 @@ import {
     contains,
   } from 'ramda'
 
+const getFilters = (listArray, delimeter=',') => {
+  const listFeatures = pluck('features')(listArray)
+  const mergeLists = [].concat.apply([], listFeatures);
+  const uniqueFeatures = uniq(mergeLists)
+  return uniqueFeatures
+  }
+
+  const filterListings = (filter, listings) => {
+    let filteredListingsIdx = []
+    const filter_lower = filter.toLowerCase()
+    //Price range filter
+    if (filter[0] === '$' && contains('-', filter)) {
+      const filterRange = filter.split('-')
+      if (filterRange && filterRange.length > 0){
+        const filterOne = dollarToInt(filterRange[0])
+        const filterTwo = dollarToInt(filterRange[1])
+          mapIndexed((x, itr) => {
+            if(x.price_formatted){
+              const listing_price = dollarToInt(x.price_formatted)
+              if (listing_price >= filterOne && listing_price <= filterTwo) {
+                filteredListingsIdx.push(itr)
+              }
+            }
+          })(listings)
+      }
+    }else {
+      mapIndexed((x, itr) => {
+        const price = (x.price_formatted || x.price_sqft_formatted)
+        if(
+          contains(filter_lower,join(' ', x.features).toLowerCase()) 
+        || contains(filter_lower, x.street_address.toLowerCase())
+        || contains(filter_lower, x.property_name.toLowerCase())
+        || contains(filter_lower, price)
+      ){
+          filteredListingsIdx.push(itr)
+        }
+      })(listings)
+    }
+
+    const filteredListings = []
+    mapIndexed((x, idx) => {
+      if(contains(idx,filteredListingsIdx)){
+        filteredListings.push(x)
+      }
+    })(listings)
+    return filteredListings
+  }
+
 const mainImage = (listing) => {
     if (listing.images && listing.images.length > 0) {
       const preferredImg = find(propEq('main_image', true))(listing.images)
@@ -55,5 +103,7 @@ const mainImage = (listing) => {
       mainImage,
       mapIndexed,
       detailsData,
-      listingPath
+      listingPath,
+      getFilters,
+      filterListings
   }
