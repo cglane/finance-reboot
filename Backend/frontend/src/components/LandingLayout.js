@@ -7,7 +7,7 @@ import Video from './Video'
 import StatusCircle from './StatusCircle'
 import ReactPlayer from 'react-player'
 import {listingPath} from '../helpers'
-
+import $ from 'jquery'
 const thing = {
     playing: true,
     volume: 0.0,
@@ -21,6 +21,8 @@ const thing = {
     height:'auto',
   }
   const test_video = 'https://hfl-static-backend.s3.amazonaws.com/static/static/videos/2018/10/12/Sanctuary_Lakes-Short1.mp4'
+  $('body').css({'overflow-y': 'hidden'})
+  
 const LandingLayout = ({ data }) =>
 {
     console.log(data, 'data')

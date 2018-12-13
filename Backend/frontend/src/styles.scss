@@ -5,7 +5,6 @@ body{
     font-size: 1.2em;
     overflow-x: hidden !important;
     width: 100%;
-    overflow-y: hidden;
 }
 a{
     text-decoration: none;
@@ -356,34 +355,35 @@ a{
 .show-mobile{
     display: none;
 }
-ul.topnav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: white;
+
+.navbar {
+    background: white;
     position: absolute;
     width: 100%;
     z-index: 20;
-  }
-  
-  ul.topnav li {
-      float: left;
-    }
-  
-  ul.topnav li a {
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    
+    border: none;
+    height: 100px;
   }
 
   
+  .navbar-right {
+      background: white;
+      li, a{
+        color: black !important;
+        text-align: center;
+        text-decoration: none;
+        font-size: 13px;
+        background: white;
+      }
     
-  ul.topnav li.right {
-      font-size: 13px;
+  }
+
+  .navbar-toggle{
+      color: black;
+      background-color: black;
+  }
+    
+  .navbar-right li {
       margin: 10px;
       margin-top:30px;
       float: right;
@@ -478,19 +478,11 @@ ul.topnav {
         font-size: 1.2em;
     }
 }
-@media screen and (max-width: 600px) {
-    ul.topnav li {
-        float: none;
+
+@media only screen and (max-width: 1000px){
+    .navbar-right li {
         width: 100%;
     }
-    .topnav .right{
-        display: none;
-    }
-    .show-mobile{
-        display: block;
-    }
-  }
-@media only screen and (max-width: 1000px){
     .listing-card-small{
         width: 100px;
     }
