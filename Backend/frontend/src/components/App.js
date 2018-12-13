@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import DataProvider from "./DataProvider";
-import Table from "./Table";
 import PropertyLayout from "./PropertyLayout"
 import ListingsLayoutDynamic from './ListingsLayoutDynamic'
 import Footer from './Footer'
@@ -16,16 +15,26 @@ import LandingLayout from './LandingLayout'
 import '../jquery'
 import '../styles.scss'
 
-const LandingPage = () => (
-  <DataProvider endpoint="api/landing-content"
-                render={data => 
-                <LandingLayout data={data} />
-              } />
-);
+const LandingPage = () => {
+  $('body').css({'overflow-y': 'hidden'})
+
+  return (
+    <DataProvider endpoint="api/landing-content"
+                  render={data => 
+                    <div>
+                       <Helmet>
+                        <title>HFL</title>
+                        <meta name="description" content={data[0]['description']} />
+                        <meta name="theme-color" content="#008f68" />
+                      </Helmet>
+                      <LandingLayout data={data} />
+                    </div>
+                } />
+  );
+}
 
 const EstateProperty = (props) => {
   $('body').css({'overflow-y': 'visible'})
-
   return (
   <DataProvider firstparam={props.match.params.name} endpoint="api/listing_detail"
     render={data => 
@@ -42,6 +51,7 @@ const EstateProperty = (props) => {
 }
 
 const LandPage = () => {
+  $('body').css({'overflow-y': 'visible'})
   return (
   <DataProvider firstparam='Land' endpoint="api/listings"
     render={data => 
@@ -57,6 +67,7 @@ const LandPage = () => {
   )
 }
 const CommercialPage = () => {
+  $('body').css({'overflow-y': 'visible'})
   return (
   <DataProvider firstparam='Commercial' endpoint="api/listings"
     render={data => 
@@ -72,6 +83,7 @@ const CommercialPage = () => {
   )
 }
 const ResidentialPage = () => {
+  $('body').css({'overflow-y': 'visible'})
   return (
   <DataProvider firstparam='Residential' endpoint="api/listings"
     render={data => 
@@ -87,6 +99,7 @@ const ResidentialPage = () => {
   )
 }
 const SoldPage = () => {
+  $('body').css({'overflow-y': 'visible'})
   return (
   <DataProvider firstparam='Sold' endpoint="api/listings"
     render={data => 
@@ -103,6 +116,7 @@ const SoldPage = () => {
 }
 
 const AboutPage = () => {
+  $('body').css({'overflow-y': 'visible'})
   return (
   <DataProvider endpoint="api/about"
     render={data => 
@@ -118,14 +132,12 @@ const AboutPage = () => {
   )
 }
 const AgentPage = (props) => {
+  $('body').css({'overflow-y': 'visible'})
   return (
   <DataProvider  endpoint="api/agents"
     render={agents => 
       {
-        console.log(agents, 'agents')
-        console.log(props.match.params.name, 'name')
         const agent = pluckAgent(props.match.params.name, agents)
-        console.log(agent, 'ag')
         return (
           <div>
             <Helmet>

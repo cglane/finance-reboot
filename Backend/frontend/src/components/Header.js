@@ -32,18 +32,6 @@ const Header = ( ) =>
                 </li>
             </ul>
         </div>
-
-         {/* <ul class="topnav">
-            <li><a href="/" className="brand-logo"><img src={config.brandImg}/></a></li>
-            <li id="hamburger" class="show-mobile">hello</li>
-            {
-                        mapIndexed((x, i)=> (
-                            <li className="right"key={i}>
-                                <a href={x['path']}>{x['name']}</a>
-                            </li>
-                        ))(config.pages)
-            }
-        </ul> */}
         <Navbar inverse collapseOnSelect>
   <Navbar.Header>
     <Navbar.Brand>
@@ -55,7 +43,7 @@ const Header = ( ) =>
     <Nav pullRight>
     {
         mapIndexed((x, i)=> (
-        <NavItem eventKey={i} href={x['path']}>
+        <NavItem key={i}eventKey={i} href={x['path']}>
                 {x['name']} 
           </NavItem>
                         ))(config.pages)

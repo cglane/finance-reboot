@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import config from '../config'
+import Loading from './Loading';
 
 class DataProvider extends Component {
   static propTypes = {
@@ -13,7 +14,7 @@ class DataProvider extends Component {
   state = {
     data: [],
     loaded: false,
-    placeholder: "Loading...."
+    placeholder:<Loading/>
   };
 
   componentDidMount() {
@@ -44,7 +45,7 @@ class DataProvider extends Component {
 
   render() {
     const { data, loaded, placeholder } = this.state;
-    return loaded ? this.props.render(data) : <p>{placeholder}</p>;
+    return loaded ? this.props.render(data) : placeholder;
   }
 }
 

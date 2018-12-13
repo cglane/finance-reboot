@@ -438,9 +438,7 @@ a{
 .video-text-wrapper{
     z-index: 10;
 }
-.react-player{
-    z-index: -2;
-}
+
 .video-0{
     opacity: 1;
     z-index: 1;
@@ -479,7 +477,26 @@ a{
     }
 }
 
+.loading-page {
+    margin-top: 200px;
+    img {
+        max-width: 300px;
+    }
+}
+.react-player{
+    z-index: -2;
+}
+.react-player-image{
+    z-index: -10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
 @media only screen and (max-width: 1000px){
+    .react-player-image{
+        position: relative;
+    }
     .navbar-right li {
         width: 100%;
     }

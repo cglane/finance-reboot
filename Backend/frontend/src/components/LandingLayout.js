@@ -1,14 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { pluck } from 'ramda'
-import {mapIndexed} from '../helpers'
-import FlipCardAbout from './FlipCardAbout'
-import Video from './Video'
-import StatusCircle from './StatusCircle'
+import {mapIndexed, mainImage} from '../helpers'
 import ReactPlayer from 'react-player'
 import {listingPath} from '../helpers'
 import $ from 'jquery'
-const thing = {
+import Loading from './Loading';
+
+const videoState = {
     playing: true,
     volume: 0.0,
     muted: true,
@@ -20,14 +19,12 @@ const thing = {
     width: '2200px',
     height:'auto',
   }
-  const test_video = 'https://hfl-static-backend.s3.amazonaws.com/static/static/videos/2018/10/12/Sanctuary_Lakes-Short1.mp4'
-  $('body').css({'overflow-y': 'hidden'})
   
 const LandingLayout = ({ data }) =>
 {
     console.log(data, 'data')
   return !data ? (
-    <p>No about data!</p>
+    <Loading/>
   ) :  (
         <div className="container-fluid">
             {
@@ -74,13 +71,19 @@ const LandingLayout = ({ data }) =>
                                 </div>
                                
                             </div>
-                            <ReactPlayer
-                                className={`react-player`}
-                                key = {itr}
-                                url={test_video}
-                                    // url={x['video']['get_absolute_image_url']}
-                            {...thing}
-                            />
+                            <img className="react-player-image"src={mainImage(x['listing'])}></img>
+                            {
+                                (x['video'] && x['video']['get_absolute_image_url'])?
+                                    <ReactPlayer
+                                            className={`react-player`}
+                                            key = {itr}
+                                            url={x['video']['get_absolute_image_url']}
+                                        {...videoState}
+                                    />
+                                    :
+                                    ''
+                            }
+                            
                     </div>
                     )
                 })(data)
