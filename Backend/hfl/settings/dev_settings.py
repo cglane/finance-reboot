@@ -110,16 +110,16 @@ DATABASES = {
         'NAME': 'db.sqlite3',
     }
 }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'ebdb',
-#         'USER': 'postgres',
-#         'PASSWORD': os.environ['HFL_PASSWORD'],
-#         'HOST': os.environ['HFL_HOST'],
-#         'PORT': 5432,
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'ebdb',
+        'USER': 'postgres',
+        'PASSWORD': os.environ['HFL_PASSWORD'],
+        'HOST': os.environ['HFL_HOST'],
+        'PORT': 5432,
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators

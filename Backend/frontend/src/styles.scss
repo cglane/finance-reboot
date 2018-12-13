@@ -118,7 +118,7 @@ a{
 .brand-logo{
     padding: 10px !important;
     img{
-        max-width: 100px;
+        max-width: 80px;
     }
 }
 .page-footer{
@@ -421,7 +421,29 @@ ul.topnav {
       }    
     }
   
-  @media screen and (max-width: 600px) {
+.react-player{
+    position: fixed;
+    left: 0px;
+    .class-0{
+        z-index: 2;
+    }
+    .class-1{
+        z-index: -1;
+    }
+    .class-2{
+        z-index: -2;
+    }
+    .class-3{
+        z-index: -3;
+    }
+    .class-4{
+        z-index: -4;
+    }
+    .class-5{
+        z-index: -5;
+    }
+}
+@media screen and (max-width: 600px) {
     ul.topnav li {
         float: none;
         width: 100%;

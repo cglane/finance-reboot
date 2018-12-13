@@ -11,12 +11,16 @@ import Header from './Header'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AboutLayout from './AboutLayout'
 import {pluckAgent} from '../helpers'
-import '../styles.scss'
 import AgentLayout from "./AgentLayout";
+import LandingLayout from './LandingLayout'
+import '../jquery'
+import '../styles.scss'
 
-const Thing = () => (
-  <DataProvider endpoint="api/listings-all/"
-                render={data => <Table data={data} />} />
+const LandingPage = () => (
+  <DataProvider endpoint="api/landing-content"
+                render={data => 
+                <LandingLayout data={data} />
+              } />
 );
 
 const EstateProperty = (props) => {
@@ -139,7 +143,7 @@ const App = () => (
     <Router>
       <div>
         <Header/>
-        <Route exact path="/landing" component={Thing} />
+        <Route exact path="/" component={LandingPage} />
         <Route exact path="/about" component={AboutPage} />
         <Route exact path="/land-listings" component={LandPage} />
         <Route exact path="/commercial-property" component={CommercialPage} />
