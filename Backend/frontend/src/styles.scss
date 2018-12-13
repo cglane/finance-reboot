@@ -352,18 +352,84 @@ a{
         margin: 10px;
     }
 }
-#menu-icon-headers {
-    color: black;
-    i{
-        padding-left:10px;
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+  }
+  
+  ul.topnav li {
+      float: left;
     }
-}
-#mobile-demo{
-    transition: transform 1s;
-}
+  
+  ul.topnav li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    
+  }
+
+  
+    
+  ul.topnav li.right {
+      font-size: 13px;
+      margin: 10px;
+      margin-top:30px;
+      float: right;
+      position: relative;
+      vertical-align: middle;
+      letter-spacing: 0px;
+      text-transform: uppercase;
+      font-weight: 100;
+      font-family: "NeoRetroFill", Garamond, serif;
+      transition: background-color 1s;
+      opacity: .8s;
+    &:hover{
+        background-color: rgba(0, 0, 0, .4)
+    }
+     &:after {
+        content:""; 
+        background: black; 
+        position: absolute; 
+        bottom: 0; 
+        left: 0; 
+        height: 2%; 
+        width: 100%;
+        -webkit-transition:width 2s !important;
+        -moz-transition:width 2s !important;
+        -ms-transition:width 2s !important;
+        -o-transition:width 2s !important;
+        transition:width 2s !important;
+        transform-origin: right top;
+    
+      } 
+      &:hover:after {
+        content:"";
+        color: red !important;
+        width: 0%; 
+        transform-origin: right top;
+        -webkit-transition:width 2s !important;
+        -moz-transition:width 2s !important;
+        -ms-transition:width 2s !important;
+        -o-transition:width 2s !important;
+        transition:width 2s !important;
+      }    
+    }
+  
+  @media screen and (max-width: 600px) {
+    ul.topnav li {
+        float: none;
+        width: 100%;
+    }
+  }
 @media only screen and (max-width: 1000px){
     .listing-card-small{
-        width: 100%;
+        width: 100px;
     }
     .filter-keys {
         border-right: none;
