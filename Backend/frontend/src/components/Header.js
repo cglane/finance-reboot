@@ -8,7 +8,7 @@ const Header = ( ) =>
   config.header ? (
     <p>Nothing to show</p>
   ) : (
-      <div>
+      <div className="header-wrapper">
         <div className="contact-bar">
             <ul>
                 <li key={1}>
@@ -34,6 +34,7 @@ const Header = ( ) =>
 
          <ul class="topnav">
             <li><a href="/" className="brand-logo"><img src={config.brandImg}/></a></li>
+            <li id="hamburger" class="show-mobile">hello</li>
             {
                         mapIndexed((x, i)=> (
                             <li className="right"key={i}>

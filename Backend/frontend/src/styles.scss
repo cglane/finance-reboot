@@ -5,6 +5,7 @@ body{
     font-size: 1.2em;
     overflow-x: hidden !important;
     width: 100%;
+    overflow-y: hidden;
 }
 a{
     text-decoration: none;
@@ -352,13 +353,18 @@ a{
         margin: 10px;
     }
 }
-
+.show-mobile{
+    display: none;
+}
 ul.topnav {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: white;
+    position: absolute;
+    width: 100%;
+    z-index: 20;
   }
   
   ul.topnav li {
@@ -421,32 +427,67 @@ ul.topnav {
       }    
     }
   
-.react-player{
+.video-wrapper{
     position: fixed;
     left: 0px;
-    .class-0{
-        z-index: 2;
-    }
-    .class-1{
-        z-index: -1;
-    }
-    .class-2{
-        z-index: -2;
-    }
-    .class-3{
-        z-index: -3;
-    }
-    .class-4{
-        z-index: -4;
-    }
-    .class-5{
-        z-index: -5;
+    top: 100px;
+    opacity: 0;
+    z-index: -1;
+}
+
+.video-text-wrapper{
+    z-index: 10;
+}
+.react-player{
+    z-index: -2;
+}
+.video-0{
+    opacity: 1;
+    z-index: 1;
+}
+
+.video-text-wrapper{
+    position: fixed;
+    top: 30vh;
+    width: 100vw;
+    margin: auto;
+    color: white;
+}
+.status-button{
+    color: white;
+    border: solid white 1px;
+
+}
+.header-wrapper{
+    z-index: 10;
+}
+.count-total-number{
+    font-size: 2.3em;
+}
+.description-landing{
+    font-size: 25px;
+    word-wrap: break-word;
+    line-height: 40px;
+    -moz-osx-font-smoothing: grayscale
+}
+.status-button{
+    transition: font-size 1s;
+    width: 50%;
+    margin: auto;
+    &:hover{
+        font-size: 1.2em;
     }
 }
 @media screen and (max-width: 600px) {
     ul.topnav li {
         float: none;
         width: 100%;
+    }
+    .topnav .right{
+        display: none;
+    }
+    .show-mobile{
+        display: block;
     }
   }
 @media only screen and (max-width: 1000px){

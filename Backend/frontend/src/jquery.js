@@ -10,16 +10,16 @@ let allVideoCount = 0
 //that is accessible from landingVideos page
 
 const hideElements = (currentIndex) => {
-    const currentHeight = $(`.video-${currentIndex} > .scroll-target`).css('top')
-    $(`.video-${currentIndex} > .scroll-target`)
+    console.log(currentIndex, 'idx')
+    $(`.video-${currentIndex}`)
         .animate({'opacity': '0', top: '100px'}, 1400, function () {
-        $(this).css({'opacity': 0,  'top': currentHeight})
+        $(this).css({'opacity': 0,  'z-index': -1})
     })
 }
 const showElements = (currentIndex) => {
-    $(`.video-${currentIndex} > .scroll-target`)
-        .animate({'opacity': '1'}, 1700, function () {
-        $(this).css({'opacity': 1})
+    $(`.video-${currentIndex}`)
+        .animate({'opacity': '1', 'z-index': '1'}, 1700, function () {
+        $(this).css({'opacity': 1, 'z-index': 1})
     })
 }
 const hideVideoDiv = (currentIndex) => {
@@ -71,31 +71,7 @@ const setSVG = (val, lastIndex, animate, ) => {
 
     }
 }
-const scrollDown = (event) => {
-    console.log('event')
-    //Hide previous div
-    lastIndex = currentIndex
-    hideVideoDiv(currentIndex)
-    hideElements(currentIndex)
-    //Increment Index
-    if (currentIndex < allVideoCount -1) {
-        currentIndex++;
-        currentPercentage = (currentIndex / allVideoCount) * 100
-    }else {
-        currentIndex = 0;
-        currentPercentage = 100;
-    }
-    //Show next div
-    setSVG(currentPercentage, lastIndex, true)        
-    showVideoDiv(currentIndex)
-    showElements(currentIndex)
-    // Delay any more scolling
-    event.preventDefault()        
-    $( 'body' ).off( 'wheel',  scrollDown );            
-    setTimeout(() => {
-        $( 'body' ).on( 'wheel',  scrollDown );        
-    }, 2000)
-}
+
 const scrollUp = (event) => {
     //Hide previous div
     lastIndex = currentIndex
@@ -121,9 +97,34 @@ const scrollUp = (event) => {
         $( 'body' ).on( 'wheel',  scrollDown );        
     }, 2000)
 }
-$(document).ready(function () {
+const scrollDown = (event) => {
     const allVideos = $('.video-wrapper')
+    let next_index = 0
     allVideoCount = allVideos.length
+    console.log('hello')
+    event.preventDefault()        
+    $( 'body' ).off( 'wheel',  scrollDown );            
+    setTimeout(() => {
+        $( 'body' ).on( 'wheel',  scrollDown );        
+    }, 2000)
+
+   hideElements(currentIndex)
+   if (currentIndex >= allVideoCount -1){
+        next_index = 0
+   }else {
+       next_index = currentIndex + 1
+   }
+   showElements(next_index)
+   currentIndex = next_index
+}
+$(document).ready(function () {
+    setTimeout(function(){
+        const allVideos = $('.video-wrapper')
+        allVideoCount = allVideos.length
+        console.log(allVideos.length, 'all videos')
+        allVideoCount = allVideos.length
+    }, 1000)
+
     $( 'body' ).on( 'wheel', scrollDown );
     $('.svg-up').click(scrollDown)
     $('.svg-down').click(scrollUp)

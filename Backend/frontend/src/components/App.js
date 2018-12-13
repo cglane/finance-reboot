@@ -151,7 +151,7 @@ const App = () => (
         <Route exact path="/sold-listings" component={SoldPage} />
         <Route exact path="/estate_property/:name?" component={EstateProperty}/> 
         <Route exact path="/agents/:name?" component={AgentPage}/> 
-        <Footer/> 
+        {/* <Footer/>  */}
       </div>
     </Router>
   </MuiThemeProvider>
