@@ -1,10 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { pluck } from 'ramda'
 import {mapIndexed, mainImage} from '../helpers'
 import ReactPlayer from 'react-player'
 import {listingPath} from '../helpers'
-import $ from 'jquery'
 import Loading from './Loading';
 
 const videoState = {
