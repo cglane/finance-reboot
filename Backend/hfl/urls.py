@@ -16,7 +16,6 @@ AboutPageViewSet,
 from rest_framework import routers, serializers, viewsets
 from rest_framework.routers import DefaultRouter
 
-
 router = DefaultRouter()
 router.register(r'landing-content',  LandingContentViewSet)
 router.register(r'agents', AgentListingViewSet)
