@@ -7,9 +7,9 @@
 
 # pip freeze > requirements.txt
 
-git add .
+# git add .
 
-git commit -m 'deploy'
+# git commit -m 'deploy'
 
 # echo "yes" | python manage.py collectstatic
 

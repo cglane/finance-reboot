@@ -7,7 +7,6 @@ from django.contrib.postgres.fields import ArrayField
 from money import Money
 from django.core.files import File  # you need this somewhere
 from django.core.files.base import ContentFile
-from urllib.parse import urlparse
 from django.conf import settings
 
 
