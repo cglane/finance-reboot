@@ -20,7 +20,6 @@ const videoState = {
   
 const LandingLayout = ({ data }) =>
 {
-    console.log(data, 'data')
   return !data ? (
     <Loading/>
   ) :  (

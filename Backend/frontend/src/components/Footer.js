@@ -13,8 +13,8 @@ import {
   
   } from 'react-share';
 const Footer = () =>
-  !config.pages ? (
-    <p>Nothing to show</p>
+   (location.pathname === '/')? (
+    ""
   ) : (
     <footer className="page-footer">
     <div className="container">

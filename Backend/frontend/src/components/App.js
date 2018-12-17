@@ -17,7 +17,6 @@ import '../styles.scss'
 
 const LandingPage = () => {
   $('body').css({'overflow-y': 'hidden'})
-
   return (
     <DataProvider endpoint="api/landing-content"
                   render={data => 
@@ -165,7 +164,7 @@ const App = () => (
         <Route exact path="/sold-listings" component={SoldPage} />
         <Route exact path="/estate_property/:name?" component={EstateProperty}/> 
         <Route exact path="/agents/:name?" component={AgentPage}/> 
-        {/* <Footer/>  */}
+        <Footer/> 
       </div>
     </Router>
   </MuiThemeProvider>

@@ -24,13 +24,15 @@ a{
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    max-width: 120vw;
+    width: 100%;
+    // max-width: 120vw;
     img{
         display: flex;
         justify-content: center;
         align-items: center;
         overflow: hidden;
-        max-width:100%;
+        min-width: 100%;
+        // max-width:100%;
     }
 }
 .background-image-padding{
@@ -123,8 +125,7 @@ a{
 }
 .page-footer{
     background: black;
-    // min-width: 100vw;
-    position: absolute;
+    min-width: 100vw;
 }
 .footer-links {
     width: 50%;

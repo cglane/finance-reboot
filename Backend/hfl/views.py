@@ -49,9 +49,7 @@ class ListingDetailView(generics.ListAPIView):
         This view should return a list of all the purchases
         for the currently authenticated user.
         """
-        print('this one')
         name = self.kwargs['name']
-        print(name, 'name')
         if name:
             listing = Listing.objects.filter(
                 street_address__iexact=name)
@@ -76,10 +74,14 @@ class ListView(generics.ListAPIView):
         Remove Sold from 'ALL'
         """
         property_type = self.kwargs['property_type']
+        
         if property_type and property_type == 'sold':
             return Listing.objects.filter(
                  images__isnull=False, status__in=['Sold', 'Leased']).distinct()
-        return Listing.objects.filter(images__isnull=False, ).exclude(status='Sold').exclude(status='Leased').distinct()
+        elif property_type:
+            return Listing.objects.filter(images__isnull=False, property_type__in=[property_type]).exclude(status='Sold').exclude(status='Leased').distinct()
+        else:
+            return Listing.objects.filter(images__isnull=False).exclude(status='Sold').exclude(status='Leased').distinct()
 
 class OtherListingsView(generics.ListAPIView):
     serializer_class = ListingSerializer
