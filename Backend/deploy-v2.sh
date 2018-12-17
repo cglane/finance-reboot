@@ -13,4 +13,4 @@
 
 # echo "yes" | python manage.py collectstatic
 
-eb deploy --profile hfl hfl-server-side
+eb deploy --profile hfl-server-side-two
