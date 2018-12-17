@@ -2,7 +2,8 @@ import React from 'react';
 
 
 const config = {
-    'domain': 'http://localhost:8000',
+    // 'domain': 'http://localhost:8000',
+    'domain': 'http://hfl-server-side-two.us-east-1.elasticbeanstalk.com/',
     'agentsPath': 'agents',
     'shortText': 120,
     'longText': 200,

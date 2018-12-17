@@ -123,6 +123,8 @@ a{
 }
 .page-footer{
     background: black;
+    // min-width: 100vw;
+    position: absolute;
 }
 .footer-links {
     width: 50%;
@@ -311,7 +313,7 @@ a{
     float: right;
 }
 .about-row{
-    min-height: 400px;
+    min-height: 500px;
 }
 .flip-card-about{
     height: inherit;
@@ -327,8 +329,15 @@ a{
         font-size: 1.6em !important;
     }
 }
+.about-wrapper{
+    background: white;
+    padding: 5%;
+}
 .about-image-wrapper{
     max-width: 100%;
+    img {
+        max-width: 100%;
+    }
 }
 .agent-avatar-wrapper{
     width:100%;

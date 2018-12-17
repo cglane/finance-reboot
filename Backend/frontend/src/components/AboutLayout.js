@@ -38,6 +38,7 @@ const AboutLayout = ({ data }) =>
             </div>
         </div>
        {/* Container for listings cards */}
+                    <div className="about-wrapper">
                     {
                         mapIndexed((x, idx) => 
                             <div key={idx}className="row about-row">
@@ -52,6 +53,7 @@ const AboutLayout = ({ data }) =>
                             </div>
                         )(data['options'])
                     }
+                    </div>
        </div>
   )
 }

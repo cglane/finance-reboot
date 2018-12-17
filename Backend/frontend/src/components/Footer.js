@@ -20,7 +20,7 @@ const Footer = () =>
     <div className="container">
       <div className="row">
 
-        <div className="col l10 s12 links-footer-block">
+        <div className="col l6 s12 links-footer-block">
             <ul>
                 {
                 mapIndexed((x, idx)=> {
