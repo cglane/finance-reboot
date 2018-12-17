@@ -111,26 +111,26 @@ WSGI_APPLICATION = 'hfl.wsgi.application'
 # }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': os.environ['RDS_DB_NAME'],
-#         'USER': os.environ['RDS_USERNAME'],
-#         'PASSWORD': os.environ['RDS_PASSWORD'],
-#         'HOST': os.environ['RDS_HOSTNAME'],
-#         'PORT': os.environ['RDS_PORT'],
-#     }
-# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ebdb',
-        'USER': 'postgres',
-        'PASSWORD': os.environ['HFL_PASSWORD'],
-        'HOST': os.environ['HFL_HOST'],
-        'PORT': 5432,
+        'NAME': os.environ['RDS_DB_NAME'],
+        'USER': os.environ['RDS_USERNAME'],
+        'PASSWORD': os.environ['RDS_PASSWORD'],
+        'HOST': os.environ['RDS_HOSTNAME'],
+        'PORT': os.environ['RDS_PORT'],
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'ebdb',
+#         'USER': 'postgres',
+#         'PASSWORD': os.environ['HFL_PASSWORD'],
+#         'HOST': os.environ['HFL_HOST'],
+#         'PORT': 5432,
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
