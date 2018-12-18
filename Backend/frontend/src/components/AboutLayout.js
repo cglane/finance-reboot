@@ -3,10 +3,11 @@ import PropTypes from "prop-types";
 import { pluck } from 'ramda'
 import {mapIndexed} from '../helpers'
 import FlipCardAbout from './FlipCardAbout'
+import OtherAgents from './OtherAgents'
+import DataProvider from './DataProvider'
 
 const AboutLayout = ({ data }) =>
 {
-    console.log(data, 'data')
   return !data ? (
     <p>No about data!</p>
   ) :  (
@@ -54,6 +55,17 @@ const AboutLayout = ({ data }) =>
                         )(data['options'])
                     }
                     </div>
+                     {/* Other Agents */}
+       <div className="col-md-12">
+            <DataProvider endpoint="api/agents"
+                render={data => {
+                    if(!data){
+                        return ''
+                    }
+                    return <OtherAgents data={data}/>
+                }
+            }/>
+       </div>
        </div>
   )
 }

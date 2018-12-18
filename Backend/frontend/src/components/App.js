@@ -9,7 +9,7 @@ import { Helmet } from 'react-helmet';
 import Header from './Header'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AboutLayout from './AboutLayout'
-import {pluckAgent} from '../helpers'
+import {pluckAgents, pickAgent} from '../helpers'
 import AgentLayout from "./AgentLayout";
 import LandingLayout from './LandingLayout'
 import '../jquery'
@@ -136,7 +136,8 @@ const AgentPage = (props) => {
   <DataProvider  endpoint="api/agents"
     render={agents => 
       {
-        const agent = pluckAgent(props.match.params.name, agents)
+        const agent = pickAgent(props.match.params.name, agents)
+        const otherAgents = pluckAgents(props.match.params.name, agents)
         return (
           <div>
             <Helmet>
@@ -144,7 +145,7 @@ const AgentPage = (props) => {
               <meta name="description" content={agent['description']} />
               <meta name="theme-color" content="#008f68" />
             </Helmet>
-            <AgentLayout data={agent} agents={agents}/>
+            <AgentLayout data={agent} agents={otherAgents}/>
           </div>  
         )
       }

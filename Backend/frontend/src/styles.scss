@@ -57,6 +57,9 @@ a{
         max-width: 100%;
     }
 }
+.agent-card{
+    max-width: 50%;
+}
 .listing-block-wrapper{
     background: white;
     z-index: 2;
@@ -516,11 +519,12 @@ a{
     .navbar-right li {
         width: 100%;
     }
-    .listing-card-small{
-        width: 100px;
-    }
+
     .filter-keys {
         border-right: none;
 
+    }
+    .listing-card{
+        width: 100%;
     }
 }
