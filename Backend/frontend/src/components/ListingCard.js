@@ -12,7 +12,7 @@ const ListingCard = ({ data, customClass }) =>
   ) : (
     <div className={`listing-card ${customClass}`}>
         <Card>
-          <Link to={listingPath(data)}>
+          <a href={listingPath(data)}>
           <CardMedia
             overlay={
             <CardTitle className="hover-hide-background" 
@@ -26,7 +26,7 @@ const ListingCard = ({ data, customClass }) =>
           }
             
           </CardMedia>
-          </Link>
+          </a>
             <div className="small-description">
             <CardTitle title={data['price_formatted'] || `${data['price_sqft_formatted']} sqft`} />
             <CardText>
