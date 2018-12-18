@@ -1,6 +1,5 @@
 import React from 'react';
 
-console.log(process.env.NODE_ENV)
 const config = {
     'domain': (process.env.NODE_ENV == 'development')? 'http://localhost:8000': 'http://hfl-server-side-two.us-east-1.elasticbeanstalk.com/',
     // 'domain': 'http://hfl-server-side-two.us-east-1.elasticbeanstalk.com/',
