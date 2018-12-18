@@ -75,7 +75,7 @@ class ListView(generics.ListAPIView):
         """
         property_type = self.kwargs['property_type']
         
-        if property_type and property_type == 'sold':
+        if property_type and property_type == 'Sold':
             return Listing.objects.filter(
                  images__isnull=False, status__in=['Sold', 'Leased']).distinct()
         elif property_type:

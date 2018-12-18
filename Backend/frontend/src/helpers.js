@@ -34,6 +34,8 @@ const getFilters = (listArray, delimeter=',') => {
   }
   const filterListings = (filter, listings) => {
     let filteredListingsIdx = []
+    const filteredListings = []
+
     const filter_lower = filter.toLowerCase()
     //Price range filter
     if (filter[0] === '$' && contains('-', filter)) {
@@ -53,26 +55,37 @@ const getFilters = (listArray, delimeter=',') => {
     }else {
       mapIndexed((x, itr) => {
         const price = (x.price_formatted || x.price_sqft_formatted)
-        if(
-          contains(filter_lower,join(' ', x.features).toLowerCase()) 
-        || contains(filter_lower, x.street_address.toLowerCase())
-        || contains(filter_lower, x.property_name.toLowerCase())
-        || contains(filter_lower, price)
-      ){
-          filteredListingsIdx.push(itr)
+        try{
+          if(
+            contains(filter_lower,join(' ', x.features).toLowerCase()) 
+          || contains(filter_lower, x.street_address.toLowerCase())
+          || contains(filter_lower, x.property_name.toLowerCase())
+          || contains(filter_lower, price)
+        ){
+            filteredListingsIdx.push(itr)
+          }
         }
+          catch{
+            console.log('hello ')
+          }
       })(listings)
     }
-
-    const filteredListings = []
-    mapIndexed((x, idx) => {
-      if(contains(idx,filteredListingsIdx)){
-        filteredListings.push(x)
-      }
-    })(listings)
-    return filteredListings
+      return pluckListings(filteredListingsIdx, listings)
   }
 
+const pluckListings = (idxList, listings)=>{
+  console.log(idxList, 'list')
+  let arr = []
+  for (let index = 0; index < idxList.length; index++) {
+    if(contains(index, idxList)){
+      arr.push(listings[idxList[index]])
+    }
+  }
+  if(arr.length > 0){
+    return arr
+  }
+  return listings
+}
 const mainImage = (listing) => {
     if (listing.images && listing.images.length > 0) {
       const preferredImg = find(propEq('main_image', true))(listing.images)

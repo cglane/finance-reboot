@@ -269,7 +269,13 @@ a{
 }
 
 .listing-card-small{
-    width: 15%;
+    width: 20%;
+    height: 500px;
+    overflow: hidden;
+    img {
+        max-height: 300px;
+        overflow: hidden;
+    }
 }
 .scroll-card{
     max-width: 500px;

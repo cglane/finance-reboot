@@ -29,10 +29,6 @@ const Footer = () =>
                         <span className="contact-label">{x.title}: </span>
                         <span className="contact-content">
                         {
-                            (x.title === 'Email')?
-                            <a href={`mailto:${x.content}?Subject=Real%20Estate`} target="_top">
-                            {x.content}
-                            </a>:
                             x.content
                         }
                         </span>

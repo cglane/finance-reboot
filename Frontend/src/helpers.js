@@ -190,7 +190,6 @@ const getFilters = (listArray, delimeter=',') => {
   }
 
   const filterByType = (listArray, property_type) => {
-    console.log(listArray, property_type)
     if (!property_type) {
       return listArray
     }

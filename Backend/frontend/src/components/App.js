@@ -105,7 +105,7 @@ const SoldPage = () => {
       <div>
             <Helmet>
               <title>HFL</title>
-              <meta name="description" content='' />
+              <meta name="description" content='Sold Listings' />
               <meta name="theme-color" content="#008f68" />
             </Helmet>
             <ListingsLayoutDynamic header="Sold Listings" data={data}/>
