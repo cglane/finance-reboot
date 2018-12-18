@@ -13,7 +13,7 @@ git commit -m 'deploy'
 
 npm run build
 
-aws s3 cp Backend/frontend/static/main.js s3://hfl-static-backend/static/frontend/main.js
+aws s3 cp Backend/frontend/static/frontend/main.js s3://hfl-static-backend/static/frontend/main.js
 
 
 cd ./Backend
