@@ -34,18 +34,21 @@ const LandingPage = () => {
 
 const EstateProperty = (props) => {
   $('body').css({'overflow-y': 'visible'})
+  setTimeout(() => {
+     $('html,body').scrollTop(0)
+  }, 100);
   return (
-  <DataProvider firstparam={props.match.params.name} endpoint="api/listing_detail"
-    render={data => 
-      <div>
-            <Helmet>
-              <title>{data[0]['property_name']}</title>
-              <meta name="description" content={data[0]['description']} />
-              <meta name="theme-color" content="#008f68" />
-            </Helmet>
-            <PropertyLayout data={data[0]}/>
-      </div>
-  } />
+    <DataProvider firstparam={props.match.params.name} endpoint="api/listing_detail"
+      render={data => 
+        <div>
+              <Helmet>
+                <title>{data[0]['property_name']}</title>
+                <meta name="description" content={data[0]['description']} />
+                <meta name="theme-color" content="#008f68" />
+              </Helmet>
+              <PropertyLayout data={data[0]}/>
+        </div>
+    } />
   )
 }
 

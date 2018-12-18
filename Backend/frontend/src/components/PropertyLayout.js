@@ -9,6 +9,7 @@ import AgentCard from './AgentCard'
 import FlipCardListing from './FlipCardListing'
 import OtherListings from'./OtherListings'
 
+
 const PropertyLayout = ({ data }) =>
 {
 
