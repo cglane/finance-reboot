@@ -37,8 +37,8 @@
     "webpack-cli": "^3.1.2"
   },
   "scripts": {
-    "dev": "webpack --mode development ./Backend/frontend/src/index.js --output ./Backend/frontend/static/frontend/main.js --watch",
-    "build": "webpack --mode production ./Backend/frontend/src/index.js --output ./Backend/frontend/static/frontend/main.js"
+    "dev": "webpack --mode development  ./Backend/frontend/src/index.js --output ./Backend/frontend/static/frontend/main.js --watch",
+    "build": "webpack --mode production  ./Backend/frontend/src/index.js --output ./Backend/frontend/static/frontend/main.js "
   },
   "repository": {
     "type": "git",

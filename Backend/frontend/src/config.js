@@ -1,9 +1,8 @@
 import React from 'react';
 
-
+console.log(process.env.NODE_ENV)
 const config = {
-    'domain': 'http://localhost:8000',
-    // 'domain': 'http://hfl-server-side-two.us-east-1.elasticbeanstalk.com/',
+    'domain': (process.env.NODE_ENV == 'development')? 'http://localhost:8000': 'http://hfl-server-side-two.us-east-1.elasticbeanstalk.com/',
     'agentsPath': 'agents',
     'shortText': 120,
     'longText': 200,
