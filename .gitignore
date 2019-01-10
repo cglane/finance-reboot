@@ -15,7 +15,7 @@ cloud_sql_proxy
 Frontend/build
 Backend/venv
 venv
-Backend/frontend/static/frontend/main.js
+Backend/frontend/static/frontend
 Backend/media
 Backend/hfl/..media
 node_modules

@@ -12,6 +12,7 @@ import OtherListings from'./OtherListings'
 
 const PropertyLayout = ({ data }) =>
 {
+console.log(data, 'data')
   return !data ? (
     <p>No listing data!</p>
   ) :  (
@@ -25,6 +26,7 @@ const PropertyLayout = ({ data }) =>
         <div className="row background-image-padding">
             <div className="col-md-12"></div>
         </div>
+        <h2 className="text-center">{data['property_name'] || data['street_address']}</h2>
         <div className="row keyword-block-row">
             <div className="col-md-12 text-center">
                 <div className="keyword-block">
@@ -35,7 +37,7 @@ const PropertyLayout = ({ data }) =>
        {/* Container for carousel text */}
        <div className="row text-center listing-block-wrapper">
             {/* Holds carousel and agent profile */}
-            <div className="col-md-8 carousel-agent-wrapper">
+            <div className="col-md-8 col-12 carousel-agent-wrapper">
                 <div className="row">
                     <CustomCarousel data={data['images']}/>
                 </div>

@@ -125,6 +125,7 @@ $(document).ready(function () {
     $( 'body' ).on( 'wheel', scrollDown );
     $('body').on('swipedown',scrollDown );
     $('body').on('swipeup',scrollDown);
+    $('body').on('touchmove',scrollDown );
     $('.svg-up').click(scrollDown)
     $('.svg-down').click(scrollUp)
 })
