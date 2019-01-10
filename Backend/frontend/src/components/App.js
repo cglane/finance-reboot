@@ -33,9 +33,7 @@ const LandingPage = () => {
 
 const EstateProperty = (props) => {
   $('body').css({'overflow-y': 'visible'})
-  setTimeout(() => {
-     $('html,body').scrollTop(0)
-  }, 100);
+
   return (
     <DataProvider firstparam={props.match.params.name} endpoint="api/listing_detail"
       render={data => 
