@@ -9,10 +9,9 @@ import AgentCard from './AgentCard'
 import FlipCardListing from './FlipCardListing'
 import OtherListings from'./OtherListings'
 
+
 const PropertyLayout = ({ data }) =>
 {
-    console.log(data['images'][0]['get_absolute_image_url'], 'heloo')
-    console.log(mainImage(data))
 
   return !data ? (
     <p>No listing data!</p>
@@ -42,7 +41,7 @@ const PropertyLayout = ({ data }) =>
                 </div>
                 <div className="row text-center">
                     <div className="col-md-10 text-centers">
-                        <AgentCard data={data['agent']}/>
+                        <AgentCard data={data['agent']} customClass="agent-card"/>
                     </div>
                 </div>
             </div>
@@ -54,7 +53,7 @@ const PropertyLayout = ({ data }) =>
 
        {/* Other Listings */}
        <div className="col-md-12">
-            <DataProvider firstparam={data['property_type']} secondparam={data['property_name']} endpoint="api/other_listings"
+            <DataProvider firstparam={data['property_type']} secondparam={data['property_name'] || data['street_address']} endpoint="api/other_listings"
                 render={data => {
                     if(!data){
                         return ''

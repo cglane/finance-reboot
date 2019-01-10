@@ -25,7 +25,7 @@ const AgentLayout = ({ data, agents }) =>
 
        {/* Other Listings */}
        <div className="col-md-12">
-            <OtherAgents data={agents}/>
+            <OtherAgents data={agents} />
        </div>
    </div>
   )

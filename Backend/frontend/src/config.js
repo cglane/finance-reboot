@@ -1,6 +1,5 @@
 import React from 'react';
 
-console.log(process.env.NODE_ENV)
 const config = {
     'domain': (process.env.NODE_ENV == 'development')? 'http://localhost:8000': 'http://hfl-server-side-two.us-east-1.elasticbeanstalk.com/',
     // 'domain': 'http://hfl-server-side-two.us-east-1.elasticbeanstalk.com/',
@@ -17,32 +16,31 @@ const config = {
         
     },
     'price_range': ['$0-$100,000',  '$100,000-$500,000', '$500,000-$1,000,000', '$1,000,000-$10,000,000'],
-    'copyright': '© 2018 Holcombe Fair & Lane, LLC',
+    'copyright': '© 2019 Holcombe Fair & Lane, LLC',
     'youtubeIcon': 'https://s3.amazonaws.com/www.hflcharleston.com/youtube.png',
     'instagamIcon': 'https://s3.amazonaws.com/www.hflcharleston.com/instagram.png',
     'pages': [
+
         {
-            'name': 'About',
-            'path': '/about'
+            'name': 'Sold',
+            'path': '/sold-listings'
+        },
+        {
+            'name': 'Residential',
+            'path': '/residential-listings'
+        },
+        {
+            'name': 'Commercial',
+            'path': '/commercial-property'
         },
         {
             'name': 'Land',
             'path': '/land-listings'
         },
         {
-            'name': 'Commercial',
-            'path': '/commercial-property'
+            'name': 'About',
+            'path': '/about'
         },
-               
-        {
-            'name': 'Residential',
-            'path': '/residential-listings'
-        },
-        {
-            'name': 'Sold',
-            'path': '/sold-listings'
-        },
-    
        
     ],
     'contactFields': [

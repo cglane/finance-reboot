@@ -27,7 +27,7 @@ class FlipCardAgent extends Component {
           <div className="front-page-wrapper" key="front">
             <h1>{`${data['first_name']} ${data['last_name']} `}</h1>
             <div> 
-                <p className="left-align"> {data['description']}</p>
+                <p className="left-align agent-flip-description"> {data['description']}</p>
                   <div onClick={this.handleClick} className="front-card-explore text-center">
                     <span>
                             Contact

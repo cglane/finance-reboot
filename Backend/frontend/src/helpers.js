@@ -10,10 +10,20 @@ import {
     pluck,
     uniq,
     contains,
+    filter
   } from 'ramda'
 import config from './config'
 
-const pluckAgent = (name, agents) => find(propEq('url_path', name))(agents)
+const pickAgent = (name, agents) => find(propEq('url_path', name))(agents)
+
+const pluckAgents = (name, agents) => {
+  
+  return filter((x) => {
+    if(!propEq('url_path', name)(x)){
+      return true
+    }
+  })(agents)
+}
 
 const getFilters = (listArray, delimeter=',') => {
   const listFeatures = pluck('features')(listArray)
@@ -135,6 +145,7 @@ const mainImage = (listing) => {
       listingPath,
       getFilters,
       filterListings,
-      pluckAgent,
-      agentPath
+      pluckAgents,
+      agentPath,
+      pickAgent
   }

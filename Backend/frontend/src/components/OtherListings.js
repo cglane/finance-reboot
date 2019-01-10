@@ -80,7 +80,7 @@ class OtherListings extends Component {
         } else {
             return (
                 <div className="row other-listings-horizontal">
-                    <div class="row">
+                    <div className="row">
                         <div className="header-wrapper-listings">
                         <i onClick={this.scrollRight} 
                             style={this.state.scrollLeft}

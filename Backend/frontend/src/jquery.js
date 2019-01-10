@@ -10,7 +10,6 @@ let allVideoCount = 0
 //that is accessible from landingVideos page
 
 const hideElements = (currentIndex) => {
-    console.log(currentIndex, 'idx')
     $(`.video-${currentIndex}`)
         .animate({'opacity': '0', top: '100px'}, 1400, function () {
         $(this).css({'opacity': 0,  'z-index': -1})
@@ -101,8 +100,7 @@ const scrollDown = (event) => {
     const allVideos = $('.video-wrapper')
     let next_index = 0
     allVideoCount = allVideos.length
-    console.log('hello')
-    event.preventDefault()        
+    event.preventDefault()
     $( 'body' ).off( 'wheel',  scrollDown );            
     setTimeout(() => {
         $( 'body' ).on( 'wheel',  scrollDown );        
@@ -121,7 +119,6 @@ $(document).ready(function () {
     setTimeout(function(){
         const allVideos = $('.video-wrapper')
         allVideoCount = allVideos.length
-        console.log(allVideos.length, 'all videos')
         allVideoCount = allVideos.length
     }, 1000)
 
