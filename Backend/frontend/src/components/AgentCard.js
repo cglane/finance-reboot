@@ -15,7 +15,7 @@ const AgentCard = ({ data, customClass }) =>
           <Link to={agentPath(data)}>
           <CardMedia
             overlay={
-            <CardTitle className="hover-hide-background" 
+            <CardTitle className="hover-hide-background agent-card-name"
                         title={`${data['first_name']} ${data['last_name']}`} 
                          />}
           >

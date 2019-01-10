@@ -248,7 +248,30 @@ a{
         background: rgba(0, 0, 0, 0.74)
     }
 }
+.listing-card-main-title{
+    font-family: "NeoRetroFill", Garamond, serif;
+}
+.listing-card-price{
+    font-family: "NeoRetroFill", Garamond, serif;
 
+}
+.listing-description-text{
+    font-family: Garamond, "NeoRetroFill", serif;
+
+}
+.agent-card-name{
+    font-family: "NeoRetroFill", Garamond, serif;
+}
+.blue-background{
+    background-color: rgb(16, 23, 233);
+    &:hover{
+        background-color: rgb(16, 40, 250);
+        color: white;
+    }
+}
+.collection-item{
+    color: gray !important;
+}
 .listing-card {
     margin: auto;
     flex-shrink: 2;

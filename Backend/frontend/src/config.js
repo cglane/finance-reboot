@@ -16,7 +16,7 @@ const config = {
         
     },
     'price_range': ['$0-$100,000',  '$100,000-$500,000', '$500,000-$1,000,000', '$1,000,000-$10,000,000'],
-    'copyright': '© 2018 Holcombe Fair & Lane, LLC',
+    'copyright': '© 2019 Holcombe Fair & Lane, LLC',
     'youtubeIcon': 'https://s3.amazonaws.com/www.hflcharleston.com/youtube.png',
     'instagamIcon': 'https://s3.amazonaws.com/www.hflcharleston.com/instagram.png',
     'pages': [
