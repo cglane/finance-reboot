@@ -67,7 +67,7 @@ a{
 }
 .property-info-wrapper{
     background: white;
-    min-height: 500px;
+    min-height: 700px;
 }
 .chip{
     font-size: 1.1em;
@@ -248,7 +248,36 @@ a{
         background: rgba(0, 0, 0, 0.74)
     }
 }
+.listing-card-main-title{
+    font-family: "NeoRetroFill", Garamond, serif;
+}
+.listing-card-price{
+    font-family: "NeoRetroFill", Garamond, serif;
 
+}
+.listing-description-text{
+    font-family: Garamond, "NeoRetroFill", serif;
+}
+.agent-flip-description{
+    font-family: Garamond, "NeoRetroFill", serif;
+}
+.about-description{
+    font-family: Garamond, "NeoRetroFill", serif;
+
+}
+.agent-card-name{
+    font-family: "NeoRetroFill", Garamond, serif;
+}
+.blue-background{
+    background-color: rgb(16, 23, 233);
+    &:hover{
+        background-color: rgb(16, 40, 250);
+        color: white;
+    }
+}
+.collection-item{
+    color: gray !important;
+}
 .listing-card {
     margin: auto;
     flex-shrink: 2;
@@ -369,6 +398,7 @@ a{
         border: solid black 1px;
         padding: 20px;
         margin: 10px;
+        word-break: break-all;
     }
 }
 .show-mobile{
@@ -385,17 +415,17 @@ a{
   }
 
   
-  .navbar-right {
-      background: white;
-      li, a{
-        color: black !important;
-        text-align: center;
-        text-decoration: none;
-        font-size: 13px;
-        background: white;
-      }
+//   .navbar-right {
+//       background: white;
+//       li, a{
+//         color: black !important;
+//         text-align: center;
+//         text-decoration: none;
+//         font-size: 15px;
+//         background: white;
+//       }
     
-  }
+//   }
 
   .navbar-toggle{
       color: black;
@@ -406,6 +436,7 @@ a{
       margin: 10px;
       margin-top:30px;
       float: right;
+      color: black !important;
       position: relative;
       vertical-align: middle;
       letter-spacing: 0px;
@@ -413,9 +444,9 @@ a{
       font-weight: 100;
       font-family: "NeoRetroFill", Garamond, serif;
       transition: background-color 1s;
-      opacity: .8s;
+      opacity: .9;
     &:hover{
-        background-color: rgba(0, 0, 0, .4)
+        background-color: rgba(0, 0, 0, .4);
     }
      &:after {
         content:""; 
@@ -482,10 +513,11 @@ a{
     font-size: 2.3em;
 }
 .description-landing{
-    font-size: 25px;
+    font-size: 1em;
     word-wrap: break-word;
     line-height: 40px;
-    -moz-osx-font-smoothing: grayscale
+    -moz-osx-font-smoothing: grayscale;
+
 }
 .status-button{
     transition: font-size 1s;
@@ -524,7 +556,29 @@ a{
         border-right: none;
 
     }
+     .listings-header{
+        margin-top: 100px;
+    }
     .listing-card{
         width: 100%;
+    }
+    .agent-card{
+        max-width: 90%;
+    }
+    .navbar-collapse{
+        background: white;
+    }
+    .loading-page {
+        margin-top: 200px;
+        height: 500px;
+        img {
+            max-width: 100px;
+        }
+    }
+    .col-12{
+        width: 100%;
+    }
+    .count-total{
+        display: none;
     }
 }

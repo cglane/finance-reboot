@@ -28,12 +28,12 @@ class FlipCardAgent extends Component {
             <div> 
                 <h4>{data.status}</h4>
                 <p className="left-align"> {data.description}</p>
-                  <a onClick={this.handleClick} className="waves-effect waves-light btn-large">
+                  <a onClick={this.handleClick} className="waves-effect waves-light btn-large blue-background">
                     Explore
                   </a>
                   {
                     (data.terrastride_src)?
-                    <a className="waves-effect waves-light btn-large" 
+                    <a className="waves-effect waves-light btn-large blue-background"
                     target="_blank"
                     href={data.terrastride_src}>
                                         Map

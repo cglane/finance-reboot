@@ -23,7 +23,6 @@ const LandingPage = () => {
                     <div>
                        <Helmet>
                         <title>HFL</title>
-                        <meta name="description" content={data[0]['description']} />
                         <meta name="theme-color" content="#008f68" />
                       </Helmet>
                       <LandingLayout data={data} />
@@ -34,9 +33,7 @@ const LandingPage = () => {
 
 const EstateProperty = (props) => {
   $('body').css({'overflow-y': 'visible'})
-  setTimeout(() => {
-     $('html,body').scrollTop(0)
-  }, 100);
+
   return (
     <DataProvider firstparam={props.match.params.name} endpoint="api/listing_detail"
       render={data => 

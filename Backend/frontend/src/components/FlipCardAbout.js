@@ -27,7 +27,7 @@ class FlipCardAbout extends Component {
           <div className="front-page-wrapper" key="front">
             <h1 className="hide-on-small-only">{data['header']}</h1>
             <div> 
-                <p className="left-align"> {data['description1']}</p>
+                <p className="left-align about-description"> {data['description1']}</p>
                   <div onClick={this.handleClick} className="front-card-explore text-center">
                     <span>
                             {data['button_text']}
@@ -36,7 +36,7 @@ class FlipCardAbout extends Component {
             </div>
           </div>
             <div onClick={this.handleClick} key="back">
-                 <p className="left-align"> {data['description2']}</p>
+                 <p className="left-align about-description"> {data['description2']}</p>
             </div>
          </ReactCardFlip>
       )

@@ -43,14 +43,12 @@ const AboutLayout = ({ data }) =>
                     {
                         mapIndexed((x, idx) => 
                             <div key={idx}className="row about-row">
-                                <div className="col-md-12">
-                                    <div className="col-md-6 about-image-wrapper">
+                                    <div className="col-12 col-md-6 about-image-wrapper">
                                         <img src={x['image']}/>
                                     </div>
-                                    <div className="col-md-6 pull-right flip-card-about">
+                                    <div className="col-12 col-md-6 pull-right flip-card-about">
                                         <FlipCardAbout data={x}/>
                                     </div>
-                                </div>
                             </div>
                         )(data['options'])
                     }

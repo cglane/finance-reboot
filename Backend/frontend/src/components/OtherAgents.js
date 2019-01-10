@@ -85,7 +85,7 @@ class OtherListings extends Component {
                         <i onClick={this.scrollRight} 
                             style={this.state.scrollLeft}
                             className="large material-icons scroll-listings scroll-left-listings">keyboard_arrow_left</i>
-                        <h3 className="other-listings-header"> Other Agents </h3>
+                        <h3 className="other-listings-header"> Our Agents </h3>
                         <i onClick={this.scrollLeft}
                             style={this.state.scrollRight}
                             className="large material-icons scroll-listings scroll-right-listings">keyboard_arrow_right</i>
