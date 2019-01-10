@@ -16,7 +16,7 @@ import '../jquery'
 import '../styles.scss'
 
 const LandingPage = () => {
-  $('body').css({'overflow-y': 'hidden'})
+  $('body, html').css({'overflow-y': 'hidden'})
   return (
     <DataProvider endpoint="api/landing-content"
                   render={data => 
@@ -32,7 +32,7 @@ const LandingPage = () => {
 }
 
 const EstateProperty = (props) => {
-  $('body').css({'overflow-y': 'visible'})
+  $('body, html').css({'overflow-y': 'visible'})
 
   return (
     <DataProvider firstparam={props.match.params.name} endpoint="api/listing_detail"
@@ -50,7 +50,7 @@ const EstateProperty = (props) => {
 }
 
 const LandPage = () => {
-  $('body').css({'overflow-y': 'visible'})
+  $('body, html').css({'overflow-y': 'visible'})
   return (
   <DataProvider firstparam='Land' endpoint="api/listings"
     render={data => 
@@ -66,7 +66,7 @@ const LandPage = () => {
   )
 }
 const CommercialPage = () => {
-  $('body').css({'overflow-y': 'visible'})
+  $('body, html').css({'overflow-y': 'visible'})
   return (
   <DataProvider firstparam='Commercial' endpoint="api/listings"
     render={data => 
@@ -82,7 +82,7 @@ const CommercialPage = () => {
   )
 }
 const ResidentialPage = () => {
-  $('body').css({'overflow-y': 'visible'})
+  $('body, html').css({'overflow-y': 'visible'})
   return (
   <DataProvider firstparam='Residential' endpoint="api/listings"
     render={data => 
@@ -98,7 +98,7 @@ const ResidentialPage = () => {
   )
 }
 const SoldPage = () => {
-  $('body').css({'overflow-y': 'visible'})
+  $('body, html').css({'overflow-y': 'visible'})
   return (
   <DataProvider firstparam='Sold' endpoint="api/listings"
     render={data => 
@@ -115,7 +115,7 @@ const SoldPage = () => {
 }
 
 const AboutPage = () => {
-  $('body').css({'overflow-y': 'visible'})
+  $('body, html').css({'overflow-y': 'visible'})
   return (
   <DataProvider endpoint="api/about"
     render={data => 
@@ -131,7 +131,7 @@ const AboutPage = () => {
   )
 }
 const AgentPage = (props) => {
-  $('body').css({'overflow-y': 'visible'})
+  $('body, html').css({'overflow-y': 'visible'})
   return (
   <DataProvider  endpoint="api/agents"
     render={agents => 
