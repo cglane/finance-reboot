@@ -20,28 +20,27 @@ const config = {
     'youtubeIcon': 'https://s3.amazonaws.com/www.hflcharleston.com/youtube.png',
     'instagamIcon': 'https://s3.amazonaws.com/www.hflcharleston.com/instagram.png',
     'pages': [
+
         {
-            'name': 'About',
-            'path': '/about'
+            'name': 'Sold',
+            'path': '/sold-listings'
+        },
+        {
+            'name': 'Residential',
+            'path': '/residential-listings'
+        },
+        {
+            'name': 'Commercial',
+            'path': '/commercial-property'
         },
         {
             'name': 'Land',
             'path': '/land-listings'
         },
         {
-            'name': 'Commercial',
-            'path': '/commercial-property'
+            'name': 'About',
+            'path': '/about'
         },
-               
-        {
-            'name': 'Residential',
-            'path': '/residential-listings'
-        },
-        {
-            'name': 'Sold',
-            'path': '/sold-listings'
-        },
-    
        
     ],
     'contactFields': [

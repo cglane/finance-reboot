@@ -44,7 +44,7 @@ const Header = ( ) =>
     {
         mapIndexed((x, i)=> (
         <NavItem key={i}eventKey={i} href={x['path']}>
-                {x['name']} 
+                {x['name']}
           </NavItem>
                         ))(config.pages)
     }
