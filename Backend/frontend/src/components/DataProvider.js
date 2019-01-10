@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, ReactDOM } from "react";
 import PropTypes from "prop-types";
 import config from '../config'
 import Loading from './Loading';
@@ -41,7 +41,12 @@ class DataProvider extends Component {
       })
       .then(data => { this.setState({ data: data, loaded: true })})
       .catch(err => console.log(err, 'err'))
+
+
   }
+  componentDidUpdate() {
+    window.scrollTo(0, 0)
+}
 
   render() {
     const { data, loaded, placeholder } = this.state;
