@@ -1,4 +1,6 @@
-
+html{
+overflow-x: hidden;
+}
 body{
     font-family: "NeoRetroFill", Garamond, serif;
     color: #636363;
@@ -72,7 +74,7 @@ background: none;
 }
 .property-info-wrapper{
     background: white;
-    min-height: 700px;
+    min-height: 900px;
 }
 .chip{
     font-size: 1.1em;
@@ -359,7 +361,7 @@ background: none;
     float: right;
 }
 .about-row{
-    min-height: 500px;
+    min-height: 600px;
 }
 .flip-card-about{
     height: inherit;
