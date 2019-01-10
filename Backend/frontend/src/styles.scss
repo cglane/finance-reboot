@@ -257,6 +257,12 @@ a{
 }
 .listing-description-text{
     font-family: Garamond, "NeoRetroFill", serif;
+}
+.agent-flip-description{
+    font-family: Garamond, "NeoRetroFill", serif;
+}
+.about-description{
+    font-family: Garamond, "NeoRetroFill", serif;
 
 }
 .agent-card-name{
@@ -549,7 +555,26 @@ a{
         border-right: none;
 
     }
+     .listings-header{
+        margin-top: 100px;
+    }
     .listing-card{
+        width: 100%;
+    }
+    .agent-card{
+        max-width: 90%;
+    }
+    .navbar-collapse{
+        background: white;
+    }
+    .loading-page {
+        margin-top: 200px;
+        height: 500px;
+        img {
+            max-width: 100px;
+        }
+    }
+    .col-12{
         width: 100%;
     }
 }
