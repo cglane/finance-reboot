@@ -122,8 +122,8 @@ $(document).ready(function () {
         allVideoCount = allVideos.length
     }, 1000)
 
-    $( 'body' ).on( 'wheel', scrollDown );
-    $('body').on('touchend',scrollDown);
+    $( 'body' ).on('wheel', scrollDown );
+    $('body').on('scroll',scrollDown);
     $('.svg-up').click(scrollDown)
     $('.svg-down').click(scrollUp)
 })
