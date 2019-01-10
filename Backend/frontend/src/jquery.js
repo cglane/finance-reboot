@@ -123,6 +123,8 @@ $(document).ready(function () {
     }, 1000)
 
     $( 'body' ).on( 'wheel', scrollDown );
+    $('body').on('swipedown',scrollDown );
+    $('body').on('swipeup',scrollDown);
     $('.svg-up').click(scrollDown)
     $('.svg-down').click(scrollUp)
 })

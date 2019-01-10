@@ -57,6 +57,9 @@ a{
         max-width: 100%;
     }
 }
+.carousel .slide{
+background: none;
+}
 .agent-card{
     max-width: 50%;
 }
@@ -64,6 +67,7 @@ a{
     background: white;
     z-index: 2;
     padding-top:20px;
+    margin-bottom: 80px;
 }
 .property-info-wrapper{
     background: white;
@@ -177,6 +181,8 @@ a{
 }
 .button-share{
     padding: 20px;
+    min-width: 200px;
+    text-align: center;
 }
 .custom-share-icon {
     width: 32px;
