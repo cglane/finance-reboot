@@ -18,6 +18,7 @@ const PropertyLayout = ({ data }) =>
     <p>No listing data!</p>
   ) :  (
    <div className="container-fluid">
+
         {/* Image */}
         <div className="row background-image">
                 <img src={mainImage(data)}/>
@@ -40,6 +41,7 @@ const PropertyLayout = ({ data }) =>
                 <div className="row">
                     <CustomCarousel data={data['images']}/>
                 </div>
+
                 <div className="row text-center">
                     <div className="col-md-10 text-centers">
                         <AgentCard data={data['agent']} customClass="agent-card"/>
