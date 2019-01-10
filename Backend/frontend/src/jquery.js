@@ -4,6 +4,7 @@ let currentIndex = 0;
 let currentPercentage = 0;
 let lastIndex = 3;
 let allVideoCount = 0
+let scrolling = false;
 //Prevent scrolling too fast
 
 //Set the index to a hidden input so 
@@ -91,29 +92,35 @@ const scrollUp = (event) => {
     showVideoDiv(currentIndex)
     showElements(currentIndex)
     // Delay any more scolling
-    $( 'body' ).off( 'wheel',  scrollDown );            
+    $( 'body' ).off( 'wheel',  scrollDown );
+    $( 'body' ).off( 'touchmove',  scrollDown );
     setTimeout(() => {
-        $( 'body' ).on( 'wheel',  scrollDown );        
+        $( 'body' ).on( 'wheel',  scrollDown );
+        $( 'body' ).on( 'touchmove',  scrollDown );
     }, 2000)
 }
 const scrollDown = (event) => {
-    const allVideos = $('.video-wrapper')
-    let next_index = 0
-    allVideoCount = allVideos.length
-    event.preventDefault()
-    $( 'body' ).off( 'wheel',  scrollDown );            
-    setTimeout(() => {
-        $( 'body' ).on( 'wheel',  scrollDown );        
-    }, 2000)
+    if(!scrolling){
+        scrolling = true
+        const allVideos = $('.video-wrapper')
+        let next_index = 0
+        allVideoCount = allVideos.length
+        event.preventDefault()
+        $( 'body' ).off( 'wheel',  scrollDown );
+        setTimeout(() => {
+            $( 'body' ).on( 'wheel',  scrollDown );
+        }, 2000)
 
-   hideElements(currentIndex)
-   if (currentIndex >= allVideoCount -1){
-        next_index = 0
-   }else {
-       next_index = currentIndex + 1
-   }
-   showElements(next_index)
-   currentIndex = next_index
+       hideElements(currentIndex)
+       if (currentIndex >= allVideoCount -1){
+            next_index = 0
+       }else {
+           next_index = currentIndex + 1
+       }
+       showElements(next_index)
+       currentIndex = next_index
+       scrolling = false
+    }
 }
 $(document).ready(function () {
     setTimeout(function(){
@@ -123,7 +130,7 @@ $(document).ready(function () {
     }, 1000)
 
     $( 'body' ).on('wheel', scrollDown );
-    $('body').on('scroll',scrollDown);
+    $('body').on('touchmove',scrollDown);
     $('.svg-up').click(scrollDown)
     $('.svg-down').click(scrollUp)
 })
