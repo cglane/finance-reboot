@@ -1,5 +1,6 @@
 html{
 overflow-x: hidden;
+overflow-y; hidden !important;
 }
 body{
     font-family: "NeoRetroFill", Garamond, serif;
@@ -593,7 +594,7 @@ background: white;
     .count-total{
         display: none;
     }
-    html, body{
-      touch-action: none;
+    .other-listings-wrapper{
+        background: white;
     }
 }

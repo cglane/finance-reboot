@@ -16,7 +16,7 @@ import '../jquery'
 import '../styles.scss'
 
 const LandingPage = () => {
-//  $('body, html').css({'overflow-y': 'hidden'})
+  $('body, html').css({'overflow-y': 'hidden'})
   return (
     <DataProvider endpoint="api/landing-content"
                   render={data => 
