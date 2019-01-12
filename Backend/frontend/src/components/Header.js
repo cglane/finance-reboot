@@ -43,7 +43,7 @@ const Header = ( ) =>
     <Nav pullRight>
     {
         mapIndexed((x, i)=> (
-        <NavItem key={i}eventKey={i} href={x['path']}>
+        <NavItem key={i} eventKey={i} href={x['path']}>
                 {x['name']}
           </NavItem>
                         ))(config.pages)
