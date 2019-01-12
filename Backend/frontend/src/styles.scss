@@ -593,7 +593,10 @@ background: white;
     .count-total{
         display: none;
     }
-    nav{
-        position: fixed;
+    html, body{
+        overflow: hidden;
+         height: 100%;
+         margin: 0;
+         overflow: hidden;
     }
 }
