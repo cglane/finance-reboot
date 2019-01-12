@@ -21,10 +21,11 @@ class FlipCardAbout extends Component {
      const frontElement = this.frontElement.clientHeight;
      const backElement = this.backElement.clientHeight;
      if (frontElement > backElement){
-          $(`.about-row-${this.props.itr}`).css({'min-height': `${frontElement }px`})
+          $(`.flip-card-about-${this.props.itr}`).css({'height': `${frontElement}px`})
      }else {
-               $(`.about-row-${this.props.itr}`).css({'min-height': `${backElement }px`})
+          $(`.flip-card-about-${this.props.itr}`).css({'height': `${backElement }px`})
      }
+     console.log(frontElement, backElement)
   }
 
   displayCard(data) {
