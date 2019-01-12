@@ -67,7 +67,7 @@ class OtherListings extends Component {
             return (
                 <div className="row">
                     <div className="col s12 other-listings-wrapper mobile">
-                    <h3> Other Agents </h3>
+                    <h3> Our Agents </h3>
                         {
                             mapIndexed((x, idx) => {
                                 return <AgentCard key={idx} customClass='mobile-card' data={x}/>
