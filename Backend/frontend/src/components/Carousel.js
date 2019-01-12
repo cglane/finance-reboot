@@ -15,7 +15,7 @@ class CustomCarousel extends Component {
             infiniteLoop={true}
             autoPlay={true}
             showThumbs={false}
-            showArrows={false   }
+            showArrows={true   }
             >
                  {
                     mapIndexed((x, idx) => {
