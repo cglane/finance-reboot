@@ -18,7 +18,16 @@ class FlipCardAbout extends Component {
     console.log('click')
     this.setState({ isFlipped: !this.state.isFlipped });
   }
-
+  componentDidMount() {
+    const frontPageHeight = $('.react-card-front').height()
+    const backPageHeight = $('.react-card-back').height()
+    console.log(frontPageHeight, backPageHeight)
+    if(frontPageHeight > backPageHeight){
+        $('.about-row').css({'min-height': `${frontPageHeight}px`})
+    }else{
+            $('.about-row').css({'min-height': `${backPageHeight}px`})
+    }
+  }
 
   displayCard(data) {
     if (data) {

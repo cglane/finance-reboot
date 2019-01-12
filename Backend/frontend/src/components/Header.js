@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import config from "../config.js";
 import { mapIndexed } from "../helpers.js";
 import $ from 'jquery'
-import {NavDropdown, Nav, NavItem,Navbar } from 'react-bootstrap'
+import {NavDropdown, Nav, NavItem, Navbar } from 'react-bootstrap'
 
 const Header = ( ) =>
   config.header ? (
