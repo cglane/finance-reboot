@@ -593,6 +593,9 @@ background: white;
     .count-total{
         display: none;
     }
-    overflow:hidden;
-    -webkit-overflow-scrolling:auto;
+    html, body{
+        -webkit-overflow-scrolling : touch !important;
+        overflow: auto !important;
+        height: 100% !important;
+    }
 }
