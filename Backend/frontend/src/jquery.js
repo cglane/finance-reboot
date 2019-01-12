@@ -100,6 +100,7 @@ const scrollUp = (event) => {
     }, 2000)
 }
 const scrollDown = (event) => {
+    event.preventDefault()
     if(!scrolling){
         scrolling = true
         const allVideos = $('.video-wrapper')
