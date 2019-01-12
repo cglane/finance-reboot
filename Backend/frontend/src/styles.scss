@@ -593,4 +593,7 @@ background: white;
     .count-total{
         display: none;
     }
+    html, body{
+      touch-action: none;
+    }
 }
