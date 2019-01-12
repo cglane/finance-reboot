@@ -17,9 +17,9 @@ class FlipCardAgent extends Component {
     const frontPageHeight = $('.react-card-front').height()
     const backPageHeight = $('.react-card-back').height()
     if(frontPageHeight > backPageHeight){
-        $('.agent-block-wrapper').css({'min-height': `${frontPageHeight}px`})
+        $('.agent-info-wrapper').css({'min-height': `${frontPageHeight}px`})
     }else{
-            $('.agent-block-wrapper').css({'min-height': `${backPageHeight}px`})
+            $('.agent-info-wrapper').css({'min-height': `${backPageHeight}px`})
     }
   }
   handleClick(e) {

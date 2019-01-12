@@ -15,25 +15,24 @@ class FlipCardAbout extends Component {
 
   handleClick(e) {
     e.preventDefault();
-    console.log('click')
     this.setState({ isFlipped: !this.state.isFlipped });
   }
   componentDidMount() {
-    const frontPageHeight = $('.react-card-front').height()
-    const backPageHeight = $('.react-card-back').height()
-    console.log(frontPageHeight, backPageHeight)
-    if(frontPageHeight > backPageHeight){
-        $('.about-row').css({'min-height': `${frontPageHeight}px`})
-    }else{
-            $('.about-row').css({'min-height': `${backPageHeight}px`})
-    }
+     const frontElement = this.frontElement.clientHeight;
+     const backElement = this.backElement.clientHeight;
+     if (frontElement > backElement){
+          $(`.about-row-${this.props.itr}`).css({'min-height': `${frontElement }px`})
+     }else {
+               $(`.about-row-${this.props.itr}`).css({'min-height': `${backElement }px`})
+     }
   }
 
   displayCard(data) {
     if (data) {
       return (
         <ReactCardFlip isFlipped={this.state.isFlipped}>
-          <div className="front-page-wrapper" key="front">
+          <div ref={ (frontElement) => this.frontElement = frontElement}
+                className="front-page-wrapper" key="front">
             <h1 className="hide-on-small-only">{data['header']}</h1>
             <div> 
                 <p className="left-align about-description"> {data['description1']}</p>
@@ -44,7 +43,8 @@ class FlipCardAbout extends Component {
                   </div>
             </div>
           </div>
-            <div onClick={this.handleClick} key="back">
+            <div ref={ (backElement) => this.backElement = backElement}
+            onClick={this.handleClick} key="back">
                  <p className="left-align about-description"> {data['description2']}</p>
             </div>
          </ReactCardFlip>

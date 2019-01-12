@@ -15,9 +15,9 @@ class FlipCardListing extends Component {
     const frontPageHeight = $('.react-card-front').height()
     const backPageHeight = $('.react-card-back').height()
     if(frontPageHeight > backPageHeight){
-        $('.listing-block-wrapper').css({'min-height': `${frontPageHeight}px`})
+        $('.property-info-wrapper').css({'min-height': `${frontPageHeight}px`})
     }else{
-            $('.listing-block-wrapper').css({'min-height': `${backPageHeight}px`})
+            $('.property-info-wrapper').css({'min-height': `${backPageHeight}px`})
     }
 }
   handleClick(e) {
