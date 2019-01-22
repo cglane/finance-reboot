@@ -1,7 +1,7 @@
 import React from 'react';
 
 const config = {
-    'domain': (process.env.NODE_ENV == 'development')? 'http://localhost:8000': 'http://hfl-server-side-two.us-east-1.elasticbeanstalk.com/',
+    'domain': (process.env.NODE_ENV == 'development')? 'http://localhost:8000': 'https://www.hflcharleston.com/',
     // 'domain': 'http://hfl-server-side-two.us-east-1.elasticbeanstalk.com/',
     'agentsPath': 'agents',
     'shortText': 120,
