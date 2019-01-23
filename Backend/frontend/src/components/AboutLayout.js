@@ -46,8 +46,8 @@ const AboutLayout = ({ data }) =>
                                     <div className="col-12 col-md-6 about-image-wrapper">
                                         <img src={x['image']}/>
                                     </div>
-                                    <div className="col-12 col-md-6 pull-right flip-card-about">
-                                        <FlipCardAbout data={x}/>
+                                    <div className={`col-12 col-md-6 pull-right flip-card-about flip-card-about-${idx}`}>
+                                        <FlipCardAbout itr={idx} data={x}/>
                                     </div>
                             </div>
                         )(data['options'])

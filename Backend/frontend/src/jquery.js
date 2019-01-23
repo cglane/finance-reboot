@@ -107,8 +107,10 @@ const scrollDown = (event) => {
         allVideoCount = allVideos.length
         event.preventDefault()
         $( 'body' ).off( 'wheel',  scrollDown );
+        $( 'body' ).off( 'touchmove',  scrollDown );
         setTimeout(() => {
             $( 'body' ).on( 'wheel',  scrollDown );
+            $( 'body' ).on( 'touchmove',  scrollDown );
         }, 2000)
 
        hideElements(currentIndex)

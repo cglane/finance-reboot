@@ -28,8 +28,8 @@ const ListingCard = ({ data, customClass }) =>
           </CardMedia>
           </a>
             <div className="small-description">
-            <CardTitle className="listing-card-price" title={data['price_formatted'] || `${data['price_sqft_formatted']} sqft`} />
-            <CardText className="listing-description-text">
+            <CardTitle className="listing-card-price neoretrofill-text" title={data['price_formatted'] || `${data['price_sqft_formatted']} sqft`} />
+            <CardText className="listing-description-text garamond-text">
             {data['description'].slice(0, config['shortText']) + '.......'}
                 </CardText>
             </div>            
