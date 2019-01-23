@@ -12,7 +12,16 @@ class FlipCardAgent extends Component {
       };
       this.handleClick = this.handleClick.bind(this);
   }
-
+   componentDidMount() {
+    console.log('mount')
+    const frontPageHeight = $('.react-card-front').height()
+    const backPageHeight = $('.react-card-back').height()
+    if(frontPageHeight > backPageHeight){
+        $('.agent-info-wrapper').css({'min-height': `${frontPageHeight}px`})
+    }else{
+            $('.agent-info-wrapper').css({'min-height': `${backPageHeight}px`})
+    }
+  }
   handleClick(e) {
     e.preventDefault();
     console.log('click')

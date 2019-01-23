@@ -3,8 +3,7 @@ import ReactCardFlip from 'react-card-flip';
 import $ from 'jquery'
 import {detailsData} from '../helpers'
 import Collection from './Collection'
-
-class FlipCardAgent extends Component {
+class FlipCardListing extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,7 +11,15 @@ class FlipCardAgent extends Component {
       };
       this.handleClick = this.handleClick.bind(this);
   }
-
+   componentDidMount() {
+    const frontPageHeight = $('.react-card-front').height()
+    const backPageHeight = $('.react-card-back').height()
+    if(frontPageHeight > backPageHeight){
+        $('.property-info-wrapper').css({'min-height': `${frontPageHeight}px`})
+    }else{
+            $('.property-info-wrapper').css({'min-height': `${backPageHeight}px`})
+    }
+}
   handleClick(e) {
     e.preventDefault();
     this.setState({ isFlipped: !this.state.isFlipped });
@@ -27,7 +34,7 @@ class FlipCardAgent extends Component {
             <h1 className="hide-on-small-only"  >{data.street_address}</h1>
             <div> 
                 <h4>{data.status}</h4>
-                <p className="left-align"> {data.description}</p>
+                <p className="left-align garamond-text"> {data.description}</p>
                   <a onClick={this.handleClick} className="waves-effect waves-light btn-large blue-background">
                     Explore
                   </a>
@@ -55,6 +62,6 @@ class FlipCardAgent extends Component {
   }
 }
 
-export default FlipCardAgent;
+export default FlipCardListing;
 
 
