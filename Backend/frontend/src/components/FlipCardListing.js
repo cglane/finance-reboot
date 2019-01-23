@@ -27,7 +27,7 @@ class FlipCardAgent extends Component {
             <h1 className="hide-on-small-only"  >{data.street_address}</h1>
             <div> 
                 <h4>{data.status}</h4>
-                <p className="left-align"> {data.description}</p>
+                <p className="left-align garamond-text"> {data.description}</p>
                   <a onClick={this.handleClick} className="waves-effect waves-light btn-large blue-background">
                     Explore
                   </a>

@@ -21,20 +21,9 @@ a{
     position: fixed;
     z-index: -1;
     margin-left: -15px;
-    margin-top:-10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    width: 100%;
-    // max-width: 120vw;
     img{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        min-width: 100%;
-        // max-width:100%;
+        max-width: 100%;
+        height: auto;
     }
 }
 .background-image-padding{
@@ -276,6 +265,9 @@ background: none;
 }
 .agent-card-name{
     font-family: "NeoRetroFill", Garamond, serif;
+}
+.garamond-text{
+	font-family: Garamond,Baskerville,Baskerville Old Face,Hoefler Text,Times New Roman,serif; 
 }
 .blue-background{
     background-color: rgb(16, 23, 233);
