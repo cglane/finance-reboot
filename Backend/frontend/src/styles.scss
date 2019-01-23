@@ -21,20 +21,9 @@ a{
     position: fixed;
     z-index: -1;
     margin-left: -15px;
-    margin-top:-10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    width: 100%;
-    // max-width: 120vw;
     img{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        width: 100%;
-        // max-width:100%;
+        max-width: 100%;
+        height: auto;
     }
 }
 .background-image-padding{
@@ -273,14 +262,7 @@ a{
     font-family: "NeoRetroFill", Garamond, serif;
 }
 .garamond-text{
-    font-family: Garamond, "NeoRetroFill", serif !important;
-}
-.neoretrofill-text{
-    font-family: "NeoRetroFill", Garamond, serif !important;
-
-}
-.other-listings-horizontal{
-background: white;
+	font-family: Garamond,Baskerville,Baskerville Old Face,Hoefler Text,Times New Roman,serif; 
 }
 .blue-background{
     background-color: darkblue;

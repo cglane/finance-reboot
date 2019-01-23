@@ -20,3 +20,4 @@ Backend/media
 Backend/hfl/..media
 node_modules
 .idea
+Backend/frontend/static/frontend/main.js
