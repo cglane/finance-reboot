@@ -84,7 +84,6 @@ const getFilters = (listArray, delimeter=',') => {
   }
 
 const pluckListings = (idxList, listings)=>{
-  console.log(idxList, 'list')
   let arr = []
   for (let index = 0; index < idxList.length; index++) {
     if(contains(index, idxList)){

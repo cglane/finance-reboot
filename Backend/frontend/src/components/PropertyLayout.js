@@ -12,7 +12,6 @@ import OtherListings from'./OtherListings'
 
 const PropertyLayout = ({ data }) =>
 {
-console.log(data, 'data')
   return !data ? (
     <p>No listing data!</p>
   ) :  (

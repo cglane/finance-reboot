@@ -13,7 +13,6 @@ class FlipCardAgent extends Component {
       this.handleClick = this.handleClick.bind(this);
   }
    componentDidMount() {
-    console.log('mount')
     const frontPageHeight = $('.react-card-front').height()
     const backPageHeight = $('.react-card-back').height()
     if(frontPageHeight > backPageHeight){
@@ -24,7 +23,6 @@ class FlipCardAgent extends Component {
   }
   handleClick(e) {
     e.preventDefault();
-    console.log('click')
     this.setState({ isFlipped: !this.state.isFlipped });
   }
 
