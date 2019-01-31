@@ -7,7 +7,8 @@ from hfl.models import (LandingContent,
                         Agent,
                         AboutPage,
                         Listing,
-                        ListingImage)
+                        ListingImage,
+                        PropertyType)
 from hfl.serializers import (ListingSerializer,
                              AgentSerializer,
                              LandingContentSerializer,
@@ -74,12 +75,12 @@ class ListView(generics.ListAPIView):
         Remove Sold from 'ALL'
         """
         property_type = self.kwargs['property_type']
-        
+        property_type_option = PropertyType.objects.filter(property_type=property_type).first()
         if property_type and property_type == 'Sold':
             return Listing.objects.filter(
                  images__isnull=False, status__in=['Sold', 'Leased']).distinct()
-        elif property_type:
-            return Listing.objects.filter(images__isnull=False, property_type__in=[property_type]).exclude(status='Sold').exclude(status='Leased').distinct()
+        elif property_type_option:
+            return Listing.objects.filter(images__isnull=False, property_type_choices__in=[property_type_option]).distinct()
         else:
             return Listing.objects.filter(images__isnull=False).exclude(status='Sold').exclude(status='Leased').distinct()
 
