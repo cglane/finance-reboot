@@ -25,7 +25,6 @@ class FlipCardAbout extends Component {
      }else {
           $(`.flip-card-about-${this.props.itr}`).css({'height': `${backElement + 10 }px`})
      }
-     console.log(frontElement, backElement)
   }
 
   displayCard(data) {
