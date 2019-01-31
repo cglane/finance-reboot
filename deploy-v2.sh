@@ -7,9 +7,9 @@
 
 # pip freeze > requirements.txt
 
-git add .
+#git add .
 
-git commit -m 'deploy'
+#git commit -m 'deploy'
 
 npm run build
 
@@ -17,5 +17,5 @@ aws s3 cp Backend/frontend/static/frontend/main.js s3://hfl-static-backend/stati
 
 
 # cd ./Backend
-
+#
 # eb deploy hfl-server-side-two
