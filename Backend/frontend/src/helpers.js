@@ -95,6 +95,15 @@ const pluckListings = (idxList, listings)=>{
   }
   return listings
 }
+const displayListing = (listings) => {
+  let preferredListing =  find(propEq('display_listing', true))(listings)
+  if (!preferredListing){
+    return listings[0]
+  }else{
+    return preferredListing
+  }
+
+}
 const mainImage = (listing) => {
     if (listing.images && listing.images.length > 0) {
       const preferredImg = find(propEq('main_image', true))(listing.images)
@@ -146,5 +155,6 @@ const mainImage = (listing) => {
       filterListings,
       pluckAgents,
       agentPath,
-      pickAgent
+      pickAgent,
+      displayListing
   }

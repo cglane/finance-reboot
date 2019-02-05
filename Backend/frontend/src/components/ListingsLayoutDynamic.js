@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {mainImage, mapIndexed, getFilters, filterListings} from '../helpers'
+import {mainImage, mapIndexed, getFilters, filterListings, displayListing} from '../helpers'
 import CustomAutoComplete from './CustomAutoComplete'
 import ListingCard from './ListingCard'
 
@@ -10,9 +10,11 @@ class ListingsLayoutDynamic extends Component {
     this.state = {
         isFlipped: false,
         filteredListings: this.props.data,
-        filters: getFilters(this.props.data)
+        filters: getFilters(this.props.data),
+        displayListing: displayListing(this.props.data)
       };
       this.updateFilter = this.updateFilter.bind(this);
+      
   }
   updateFilter(activeFilter){
     const filteredListings = filterListings(activeFilter, this.props.data)
@@ -27,7 +29,7 @@ class ListingsLayoutDynamic extends Component {
         <div className="row background-image">
             {
                 (data && data.length > 1)?
-                <img src={mainImage(this.props.data[0])}/>
+                <img src={mainImage(this.state.displayListing)}/>
                 :
                 ''
             }
