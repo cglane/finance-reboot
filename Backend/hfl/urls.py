@@ -15,6 +15,7 @@ AboutPageViewSet,
 )
 from rest_framework import routers, serializers, viewsets
 from rest_framework.routers import DefaultRouter
+from django.views.generic.base import TemplateView
 
 router = DefaultRouter()
 router.register(r'landing-content',  LandingContentViewSet)
@@ -41,6 +42,7 @@ urlpatterns = [
     url(r'^sold-listings', include('frontend.urls')),  # Default to frontend urls
     url(r'^about', include('frontend.urls')),  # Default to frontend urls
     url(r'^$', include('frontend.urls')),
+    url(r'^googlec4a20743e05aaec0.html', TemplateView.as_view(template_name='googlec4a20743e05aaec0.html'), name="home")
     # Default to frontend urls
 
 ]
