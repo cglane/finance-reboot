@@ -23,6 +23,8 @@ const LandingPage = () => {
                     <div>
                        <Helmet>
                         <title>HFL</title>
+                        <meta name="description" content="Discover your next South Carolina Lowcountry home or plantation! HFL is a real estate firm serving commercial and recreational clients for over 80 years." />
+
                         <meta name="theme-color" content="#008f68" />
                       </Helmet>
                       <LandingLayout data={data} />
@@ -33,14 +35,14 @@ const LandingPage = () => {
 
 const EstateProperty = (props) => {
   $('body, html').css({'overflow-y': 'visible'})
-
+  console.log('estate')
   return (
     <DataProvider firstparam={props.match.params.name} endpoint="api/listing_detail"
       render={data => 
         <div>
               <Helmet>
-                <title>{data[0]['property_name']}</title>
-                <meta name="description" content={data[0]['description']} />
+                <title>{  data[0]['html_title']}</title>
+                <meta name="description" content={data[0]['html_description'] || data[0]['description']} />
                 <meta name="theme-color" content="#008f68" />
               </Helmet>
               <PropertyLayout data={data[0]}/>
@@ -57,7 +59,7 @@ const LandPage = () => {
       <div>
             <Helmet>
               <title>HFL</title>
-              <meta name="description" content='' />
+              <meta name="description" content='Land Listings' />
               <meta name="theme-color" content="#008f68" />
             </Helmet>
             <ListingsLayoutDynamic header="Land Listings" data={data}/>
@@ -73,7 +75,7 @@ const CommercialPage = () => {
       <div>
             <Helmet>
               <title>HFL</title>
-              <meta name="description" content='' />
+              <meta name="description" content='Commercial Listings' />
               <meta name="theme-color" content="#008f68" />
             </Helmet>
             <ListingsLayoutDynamic header="Commercial Listings" data={data}/>
