@@ -12,8 +12,10 @@ import OtherListings from'./OtherListings'
 
 const PropertyLayout = ({ data }) =>
 {
-  return !data ? (
-    <p>No listing data!</p>
+  return (data['status'] ==  'Draft')? (
+    <div>
+        <p>Listing is Temporarily Inactive</p>
+    </div>
   ) :  (
    <div className="container-fluid">
 

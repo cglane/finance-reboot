@@ -60,7 +60,8 @@ class Listing(models.Model):
         ('Available', 'Available'),
         ('Under Contract', 'Under Contract'),
         ('Sold', 'Sold'),
-        ('Leased', 'Leased')
+        ('Leased', 'Leased'),
+        ('Draft', 'Draft')
     )
     LISTING_TYPES = (
         ('Land', 'Land'),

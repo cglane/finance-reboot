@@ -62,7 +62,7 @@ class ListingDetailView(generics.ListAPIView):
 class ListMapView(generics.ListAPIView):
     serializer_class = ListingMapSerializer
     def get_queryset(self):
-        return Listing.objects.exclude(status="Sold").exclude(status="Leased")
+        return Listing.objects.exclude(status="Sold").exclude(status="Leased").exclude(status="Draft")
 
 class ListView(generics.ListAPIView):
     serializer_class = ListingSerializer
@@ -78,11 +78,21 @@ class ListView(generics.ListAPIView):
         property_type_option = PropertyType.objects.filter(property_type=property_type).first()
         if property_type and property_type == 'Sold':
             return Listing.objects.filter(
-                 images__isnull=False, status__in=['Sold', 'Leased']).distinct()
+                 images__isnull=False, status__in=['Sold', 'Leased'])\
+                .exclude(status='Draft')\
+                .distinct()
         elif property_type_option:
-            return Listing.objects.filter(images__isnull=False, property_type_choices__in=[property_type_option]).exclude(status='Sold').exclude(status='Leased').distinct()
+            return Listing.objects.filter(images__isnull=False, property_type_choices__in=[property_type_option])\
+                .exclude(status='Sold')\
+                .exclude(status='Leased') \
+                .exclude(status='Draft') \
+                .distinct()
         else:
-            return Listing.objects.filter(images__isnull=False).exclude(status='Sold').exclude(status='Leased').distinct()
+            return Listing.objects.filter(images__isnull=False)\
+                .exclude(status='Sold')\
+                .exclude(status='Leased') \
+                .exclude(status='Draft') \
+                .distinct()
 
 class OtherListingsView(generics.ListAPIView):
     serializer_class = ListingSerializer
@@ -100,6 +110,7 @@ class OtherListingsView(generics.ListAPIView):
             return Listing.objects.filter(images__isnull=False, property_type=property_type,)\
                 .exclude(status='Sold')\
                 .exclude(property_name=property_name)\
+                .exclude(status="Draft")\
                 .exclude(status='Leased')\
                 .distinct()[:5]
 
