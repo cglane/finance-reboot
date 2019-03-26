@@ -35,10 +35,10 @@ const LandingPage = () => {
 
 const EstateProperty = (props) => {
   $('body, html').css({'overflow-y': 'visible'})
-  console.log('estate')
+
   return (
     <DataProvider firstparam={props.match.params.name} endpoint="api/listing_detail"
-      render={data => 
+      render={data =>
         <div>
               <Helmet>
                 <title>{  data[0]['html_title']}</title>
