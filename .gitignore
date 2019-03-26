@@ -21,3 +21,4 @@ Backend/hfl/..media
 node_modules
 .idea
 Backend/frontend/static/frontend/
+Backend/hfl/*.pyc
