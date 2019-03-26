@@ -12,8 +12,21 @@ import OtherListings from'./OtherListings'
 
 const PropertyLayout = ({ data }) =>
 {
-  return !data ? (
-    <p>No listing data!</p>
+  return (data['status'] ==  'Draft')? (
+    <div className="container-fluid">
+        <div className="row background-image">
+            <img/>
+        </div>
+                {/* Keywords */}
+        <div className="row background-image-padding">
+            <div className="col-md-12"></div>
+        </div>
+        <h5 className="text-center">
+            We’re sorry. The listing you are looking for is no longer on the market. Please call our office if you would like more information.
+        </h5>
+               <div className="row text-center listing-block-wrapper">
+        </div>
+    </div>
   ) :  (
    <div className="container-fluid">
 
