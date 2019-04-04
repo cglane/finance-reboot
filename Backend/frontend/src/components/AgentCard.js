@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 import { Link } from 'react-router-dom'
 import {agentPath} from '../helpers'
 import {Card,CardMedia, CardTitle, CardText} from 'material-ui/Card';
-
+import CustomModal from './CustomModal'
 import config from '../config'
 
-const AgentCard = ({ data, customClass }) =>
+const AgentCard = ({ data, customClass, streetAddress }) =>
   !data ? (
     <p>No Data</p>
   ) : (
@@ -27,11 +27,12 @@ const AgentCard = ({ data, customClass }) =>
             
           </CardMedia>
           </Link>
-            <div className="small-description">
-            {/* <CardTitle title={data['price_formatted'] || `${data['price_sqft_formatted']} sqft`} /> */}
-            <CardText>
-            {data['description'].slice(0, config['longText']) + '.......'}
-                </CardText>
+              <div className="small-description">
+              {/* <CardTitle title={data['price_formatted'] || `${data['price_sqft_formatted']} sqft`} /> */}
+              <CardText>
+              {/* {data['description'].slice(0, config['longText']) + '.......'} */}
+                  <CustomModal agent={data} streetAddress={streetAddress}></CustomModal>
+              </CardText>
             </div>            
         </Card>
   </div>

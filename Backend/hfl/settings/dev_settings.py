@@ -31,10 +31,18 @@ SECRET_KEY = 'za^(=bc!k)ulybi@0(y0-ov6#i1&$#1mgpy2oed2)h)jdji+vi'
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-ALLOWED_DOMAINS = ['localhost:8000', 'localhost:3000',
+ALLOWED_DOMAINS = ['127.0.0.1', 'localhost', 'localhost:3000',
                    'holcombe-fair-lane.appspot.com']
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = False
+
+# Email
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'hflemails@gmail.com'
+EMAIL_HOST_PASSWORD = '1Testing!'
+EMAIL_PORT = 587
 
 # Application definition
 
@@ -110,16 +118,7 @@ DATABASES = {
         'NAME': 'db.sqlite3',
     }
 }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'ebdb',
-#         'USER': 'postgres',
-#         'PASSWORD': os.environ['HFL_PASSWORD'],
-#         'HOST': os.environ['HFL_HOST'],
-#         'PORT': 5432,
-#     }
-# }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators

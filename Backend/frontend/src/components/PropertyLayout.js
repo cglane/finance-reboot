@@ -12,6 +12,7 @@ import OtherListings from'./OtherListings'
 
 const PropertyLayout = ({ data }) =>
 {
+    console.log(data, 'data')
   return (data['status'] ==  'Draft')? (
     <div className="container-fluid">
         <div className="row background-image">
@@ -56,7 +57,7 @@ const PropertyLayout = ({ data }) =>
 
                 <div className="row text-center">
                     <div className="col-md-10 text-centers">
-                        <AgentCard data={data['agent']} customClass="agent-card"/>
+                        <AgentCard data={data['agent']} customClass="agent-card" streetAddress={data['street_address']}/>
                     </div>
                 </div>
             </div>
