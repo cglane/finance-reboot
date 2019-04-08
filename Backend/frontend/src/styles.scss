@@ -559,7 +559,9 @@ a{
 .modal-form{
     .close{
         border: solid black 1px;
-        border-radius: 100;
+        border-radius: 20px;
+        width: 35px;
+        padding:5px;
     }
     text-transform: uppercase !important;
     .email-required{

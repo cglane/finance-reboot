@@ -12,13 +12,15 @@ class CustomModal extends React.Component {
     this.handleClose = this.handleClose.bind(this);
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.componentWillUnmount = this.componentWillUnmount.bind(this)
 
     this.state = {  
       show: false,
       email:'',
       name: '',
       phoneNumber: '',
-      message: ''
+      message: '',
+      showConfirmation:false
 
     };
   }
@@ -38,6 +40,9 @@ class CustomModal extends React.Component {
   handleShow() {
     this.setState({ show: true });
   }
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
   handleSubmit(event){
     event.preventDefault();
     let data = {
@@ -51,6 +56,10 @@ class CustomModal extends React.Component {
       axios.post(`${config.domain}/email`,  data)
       .then((res) => {
         this.handleClose()
+        setTimeout(()=> {
+          this.setState({showConfirmation: true})
+        })
+        
       }).catch((err)=> {
         this.handleClose()
         alert('An error occured sending the email!')
@@ -61,6 +70,7 @@ class CustomModal extends React.Component {
   render() {
     return (
       <>    
+        {(this.state.showConfirmation)? <ConfirmationModal/>: ''}
         <i className="material-icons" onClick={this.handleShow}>
             message
         </i>

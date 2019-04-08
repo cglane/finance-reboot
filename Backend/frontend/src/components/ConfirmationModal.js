@@ -10,7 +10,6 @@ class ConfirmationModal extends React.Component {
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
 
     this.state = {  
       show: true,
@@ -41,16 +40,10 @@ class ConfirmationModal extends React.Component {
   render() {
     return (
       <>    
-        <i className="material-icons" onClick={this.handleShow}>
-            message
-        </i>
         <Modal className="modal-form " show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Request for more Information</Modal.Title>
+          Thank You For Your Request. We will follow up shortly.
           </Modal.Header>
-          <Modal.Body>
-            <h3>Thank You For Your Request. We will follow up shortly.</h3>
-          </Modal.Body>
         </Modal>
         
       </>
