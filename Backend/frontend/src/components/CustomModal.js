@@ -3,18 +3,18 @@ import {Button, Modal, Form } from 'react-bootstrap'
 import axios from 'axios';
 import $ from 'jquery'
 import config from '../config'
+import ConfirmationModal from './ConfirmationModal'
 
 class CustomModal extends React.Component {
   constructor(props, context) {
     super(props, context);
-    console.log(props, 'props')
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
 
     this.state = {  
-      show: true,
+      show: false,
       email:'',
       name: '',
       phoneNumber: '',
@@ -46,14 +46,13 @@ class CustomModal extends React.Component {
       phoneNumber: this.state.phoneNumber,
       message: this.state.message,
       agentEmail: this.props.agent.email,
-      streetAddress: this.props.streetAddress
+      streetAddress: (this.props.streetAddress || 'Not Set') 
     }
-    console.log(data, 'data')
       axios.post(`${config.domain}/email`,  data)
       .then((res) => {
-        console.log(res, 'res');
+        this.handleClose()
       }).catch((err)=> {
-        console.log(err, 'err')
+        this.handleClose()
         alert('An error occured sending the email!')
       })
       
@@ -61,17 +60,16 @@ class CustomModal extends React.Component {
 
   render() {
     return (
-      <>
-        <Button variant="primary" onClick={this.handleShow}>
-          Launch demo modal
-        </Button>
-
-        <Modal show={this.state.show} onHide={this.handleClose}>
+      <>    
+        <i className="material-icons" onClick={this.handleShow}>
+            message
+        </i>
+        <Modal className="modal-form " show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Request for more Information</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <form >
+            <form className="text-center">
               <input 
                 className="form-control form-control-lg" 
                 type="text" 
@@ -79,12 +77,14 @@ class CustomModal extends React.Component {
                 value={this.state.name}
                 onChange={this.handleChange}
                 placeholder="Name"/>
+                <span className="email-required"> Email is required</span>
               <input 
                 className="form-control form-control-lg" 
                 type="email" 
                 name="email"
                 value={this.state.email}
                 onChange={this.handleChange}
+                required
                 placeholder="Email Address"/>
               <input 
                 className="form-control form-control-lg" 
@@ -101,7 +101,7 @@ class CustomModal extends React.Component {
                 value={this.state.message}
                 onChange={this.handleChange}
                 rows="3"></textarea>
-              <button onClick={this.handleSubmit}>Submit</button>
+              <button className="modal-submit text-center"onClick={this.handleSubmit}>Submit</button>
 
             </form>
 

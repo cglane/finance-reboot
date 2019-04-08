@@ -16,6 +16,10 @@ a{
         font-weight:none
     }
 }
+.modal {
+    background: none;
+    width: auto;
+}
 
 .background-image{
     position: fixed;
@@ -545,6 +549,37 @@ a{
    margin: 1px;
    vertical-align: top;
    display: inline-block;
+}
+.agent-contact-links-card{
+    li {
+        width: 30%;
+        display: inline-block;
+    }
+}
+.modal-form{
+    .close{
+        border: solid black 1px;
+        border-radius: 100;
+    }
+    text-transform: uppercase !important;
+    .email-required{
+        color: red;
+        font-size: .7em;
+    }
+    input{
+        border: solid black 1px !important;
+    }
+    textarea{
+        border: solid black 1px !important;
+    }
+    .modal-submit{
+        border: solid red 1px;
+        width: 30%;
+        margin: 10px;
+    }
+    .form-control{
+        padding: 5px !important;
+    }
 }
 @media only screen and (max-width: 1000px){
     .react-player-image{

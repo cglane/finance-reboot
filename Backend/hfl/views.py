@@ -30,7 +30,6 @@ def email_view(request):
         body_unicode = request.body.decode('utf-8')
         body = json.loads(body_unicode)
         try:
-            print(body, 'body')
             text_content = ""
             html_content = "\
                 <html>\
