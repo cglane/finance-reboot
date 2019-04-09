@@ -29,7 +29,6 @@ def email_view(request):
     if request.method == "POST":
         body_unicode = request.body.decode('utf-8')
         body = json.loads(body_unicode)
-        print(body, 'body')
         try:
             text_content = ""
             html_content = "\
@@ -42,11 +41,12 @@ def email_view(request):
                 </html>".format(body['name'], body['email'], body['phoneNumber'], body['message'], body['streetAddress'])
             msg = EmailMultiAlternatives("New Lead", text_content, "info@hfl.com", [body['agentEmail']])
             msg.attach_alternative(html_content, "text/html")
+            print('success')
             msg.send()
             return HttpResponse(status=201)
         except Exception as e:
 			print(e, 'exception')
-    return HttpResponse(status=403)
+    return HttpResponse(str(e), status=403)
 
 
 class ListingImagesContentViewSet(viewsets.ReadOnlyModelViewSet):
