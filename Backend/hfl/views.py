@@ -1,5 +1,6 @@
 import json
 from django.http import HttpResponse
+from django.core.mail import EmailMultiAlternatives
 
 from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
@@ -22,6 +23,30 @@ from rest_framework.decorators import detail_route
 from rest_framework.response import Response
 from django.utils.decorators import method_decorator
 from rest_framework.views import APIView
+
+@csrf_exempt    
+def email_view(request):
+    if request.method == "POST":
+        body_unicode = request.body.decode('utf-8')
+        body = json.loads(body_unicode)
+        print(body, 'body')
+        try:
+            text_content = ""
+            html_content = "\
+                <html>\
+                    <span>Name:{0}</span><br>\
+                    <span>Email:{1}</span><br>\
+                    <span>Telephone:{2}</span><br>\
+                    <span>Message:{3}</span><br>\
+                    <span>Address:{4}</span><br>\
+                </html>".format(body['name'], body['email'], body['phoneNumber'], body['message'], body['streetAddress'])
+            msg = EmailMultiAlternatives("New Lead", text_content, "info@hfl.com", [body['agentEmail']])
+            msg.attach_alternative(html_content, "text/html")
+            msg.send()
+            return HttpResponse(status=201)
+        except Exception as e:
+			print(e, 'exception')
+    return HttpResponse(status=403)
 
 
 class ListingImagesContentViewSet(viewsets.ReadOnlyModelViewSet):
