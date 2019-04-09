@@ -63,7 +63,7 @@ class CustomModal extends React.Component {
         
       }).catch((err)=> {
         this.handleClose()
-        alert('An error occured sending the email!')
+        alert('An error has occurred' +  err)
       })
     }else{
       this.setState({showEmailError: true})
@@ -80,7 +80,7 @@ class CustomModal extends React.Component {
         </i>
         <Modal className="modal-form " show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Request for more Information</Modal.Title>
+            <Modal.Title>Request More Information</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <form className="text-center">
