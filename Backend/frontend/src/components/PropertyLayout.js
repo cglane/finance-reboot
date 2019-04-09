@@ -12,7 +12,6 @@ import OtherListings from'./OtherListings'
 
 const PropertyLayout = ({ data }) =>
 {
-    console.log(data, 'data')
   return (data['status'] ==  'Draft')? (
     <div className="container-fluid">
         <div className="row background-image">
