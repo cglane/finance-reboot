@@ -31,7 +31,7 @@ const AgentCard = ({ data, customClass, streetAddress }) =>
               {/* <CardTitle title={data['price_formatted'] || `${data['price_sqft_formatted']} sqft`} /> */}
               <CardText>
               {/* {data['description'].slice(0, config['longText']) + '.......'} */}
-                <ul className="agent-contact-links-card">
+                <ul className="agent-contact-links-card text-center">
                   <li key={1}>
                     <a href={`tel:+1${data['mobile_phone_number']}`}>
                       <i className="material-icons">
