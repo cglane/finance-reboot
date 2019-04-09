@@ -1,0 +1,22 @@
+branch-defaults:
+  staging:
+    environment: hfl-backend-four
+  production:
+    environment: hfl-server-side-two
+environment-defaults:
+  hfl-backend-four:
+    branch: null
+    repository: null
+global:
+  application_name: hfl-site
+  default_ec2_keyname: null
+  default_platform: arn:aws:elasticbeanstalk:us-east-1::platform/Python 2.7 running
+    on 64bit Amazon Linux/2.6.5
+  default_region: us-east-1
+  include_git_submodules: true
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: null
+  sc: git
+  workspace_type: Application
