@@ -63,7 +63,7 @@ class CustomModal extends React.Component {
         
       }).catch((err)=> {
         this.handleClose()
-        alert('An error has occurred' +  err)
+        alert('An error has occurred:' +  err)
       })
     }else{
       this.setState({showEmailError: true})

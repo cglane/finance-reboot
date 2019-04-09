@@ -41,7 +41,6 @@ def email_view(request):
                 </html>".format(body['name'], body['email'], body['phoneNumber'], body['message'], body['streetAddress'])
             msg = EmailMultiAlternatives("New Lead", text_content, "info@hfl.com", [body['agentEmail']])
             msg.attach_alternative(html_content, "text/html")
-            print('success')
             msg.send()
             return HttpResponse(status=201)
         except Exception as e:
