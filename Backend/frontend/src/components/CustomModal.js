@@ -20,8 +20,8 @@ class CustomModal extends React.Component {
       name: '',
       phoneNumber: '',
       message: '',
-      showConfirmation:false
-
+      showConfirmation:false,
+      showEmailError: false
     };
   }
   handleChange(event) {
@@ -44,15 +44,16 @@ class CustomModal extends React.Component {
     this._isMounted = false;
   }
   handleSubmit(event){
-    event.preventDefault();
-    let data = {
-      email: this.state.email,
-      name: this.state.name,
-      phoneNumber: this.state.phoneNumber,
-      message: this.state.message,
-      agentEmail: this.props.agent.email,
-      streetAddress: (this.props.streetAddress || 'Not Set') 
-    }
+    if( this.state.email){
+      event.preventDefault();
+      let data = {
+        email: this.state.email,
+        name: this.state.name,
+        phoneNumber: this.state.phoneNumber,
+        message: this.state.message,
+        agentEmail: this.props.agent.email,
+        streetAddress: (this.props.streetAddress || 'Not Set') 
+      }
       axios.post(`${config.domain}/email`,  data)
       .then((res) => {
         this.handleClose()
@@ -64,6 +65,9 @@ class CustomModal extends React.Component {
         this.handleClose()
         alert('An error occured sending the email!')
       })
+    }else{
+      this.setState({showEmailError: true})
+    }
       
   }
 
@@ -80,6 +84,8 @@ class CustomModal extends React.Component {
           </Modal.Header>
           <Modal.Body>
             <form className="text-center">
+              <div className="g-recaptcha" data-sitekey="6Lcf5JgUAAAAAIHIjbf44QUWYwc7vOzKsJ_dSEW0"></div>
+
               <input 
                 className="form-control form-control-lg" 
                 type="text" 
@@ -87,14 +93,16 @@ class CustomModal extends React.Component {
                 value={this.state.name}
                 onChange={this.handleChange}
                 placeholder="Name"/>
-                <span className="email-required"> Email is required</span>
+                {
+                  (this.state.showEmailError)? <span className="email-required"> Email is required</span>: ''
+                }
               <input 
                 className="form-control form-control-lg" 
                 type="email" 
                 name="email"
                 value={this.state.email}
                 onChange={this.handleChange}
-                required
+                required={true}
                 placeholder="Email Address"/>
               <input 
                 className="form-control form-control-lg" 

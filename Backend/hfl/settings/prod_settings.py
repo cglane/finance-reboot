@@ -40,6 +40,13 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 CSRF_COOKIE_SECURE = True
 # Application definition
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'hflemails@gmail.com'
+EMAIL_HOST_PASSWORD = '1Testing!'
+EMAIL_PORT = 587
+
 INSTALLED_APPS = [
     'jet',
     'django.contrib.admin',
