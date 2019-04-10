@@ -3,7 +3,7 @@ import React from 'react';
 const config = {
     // CHANGE DOMAIN FOR PRODUCTION
     // 'domain': (process.env.NODE_ENV == 'development')? 'http://localhost:8000': 'https://www.hflcharleston.com/',
-    'domain': 'http://hfl-backend-four.us-east-1.elasticbeanstalk.com/',
+    'domain': 'https://hfl-backend-four.us-east-1.elasticbeanstalk.com/',
     'agentsPath': 'agents',
     'shortText': 120,
     'longText': 200,
