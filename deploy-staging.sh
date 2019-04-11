@@ -12,9 +12,9 @@
 #git commit -m 'deploy'
 
 #
-cd ./Backend
+# cd ./Backend
 
-eb deploy hfl-backend-four
+# eb deploy hfl-backend-four
 
 
 
