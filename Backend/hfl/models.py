@@ -8,6 +8,7 @@ from money import Money
 from django.core.files import File  # you need this somewhere
 from django.core.files.base import ContentFile
 from django.conf import settings
+from django.db.models import F
 
 
 class AboutPage(models.Model):
@@ -215,8 +216,6 @@ class ListingImage(models.Model):
     class Meta:
         verbose_name = _("Picture")
         verbose_name_plural = _("Pictures")
-        ordering = ['title']
-
 
     # IS VERY SLOW OTHERWISE TO CALL GCLOUD
     @property
