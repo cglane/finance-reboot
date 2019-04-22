@@ -215,6 +215,8 @@ class ListingImage(models.Model):
     class Meta:
         verbose_name = _("Picture")
         verbose_name_plural = _("Pictures")
+        ordering = ['title']
+
 
     # IS VERY SLOW OTHERWISE TO CALL GCLOUD
     @property
