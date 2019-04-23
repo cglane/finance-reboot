@@ -10,7 +10,10 @@ import {
     pluck,
     uniq,
     contains,
-    filter
+    filter,
+    sortBy,
+    prop,
+    reverse
   } from 'ramda'
 import config from './config'
 
@@ -23,6 +26,10 @@ const pluckAgents = (name, agents) => {
       return true
     }
   })(agents)
+}
+
+const orderByWeight = (listArray) => {
+    return reverse(sortBy(prop('weight'))(listArray))
 }
 
 const getFilters = (listArray, delimeter=',') => {
@@ -156,5 +163,6 @@ const mainImage = (listing) => {
       pluckAgents,
       agentPath,
       pickAgent,
-      displayListing
+      displayListing,
+      orderByWeight
   }

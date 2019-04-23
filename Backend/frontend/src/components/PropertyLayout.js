@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import key from "weak-key";
-import {mainImage} from '../helpers'
+import {mainImage, orderByWeight} from '../helpers'
 import Chips from './Chips'
 import CustomCarousel from './Carousel'
 import DataProvider from './DataProvider'
@@ -51,7 +51,7 @@ const PropertyLayout = ({ data }) =>
             {/* Holds carousel and agent profile */}
             <div className="col-md-8 col-12 carousel-agent-wrapper">
                 <div className="row">
-                    <CustomCarousel data={data['images']}/>
+                    <CustomCarousel data={orderByWeight(data['images'])}/>
                 </div>
 
                 <div className="row text-center">

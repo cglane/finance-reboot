@@ -207,7 +207,8 @@ class ListingImage(models.Model):
     title = models.CharField(_("Title"), max_length=255, blank=True)
     main_image = models.NullBooleanField(
         help_text="For the image that will display wide across the page")
-
+    weight = models.PositiveIntegerField(default=1,
+                                          help_text="The response will be ordered from highest to lowest")
     def image_tag(self):
         return u'<img style="max-width: 150px"src="%s" />' % self.image.url
     image_tag.short_description = 'Image'
@@ -216,7 +217,7 @@ class ListingImage(models.Model):
     class Meta:
         verbose_name = _("Picture")
         verbose_name_plural = _("Pictures")
-
+        ordering = ['-weight']
     # IS VERY SLOW OTHERWISE TO CALL GCLOUD
     @property
     def get_absolute_image_url(self):

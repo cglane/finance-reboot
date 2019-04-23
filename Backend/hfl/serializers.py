@@ -44,7 +44,7 @@ class ImageSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ListingImage
-        fields = ('title', 'get_absolute_image_url', 'main_image')
+        fields = ('title', 'get_absolute_image_url', 'main_image', 'weight')
 
 
 class AgentSerializer(serializers.ModelSerializer):
