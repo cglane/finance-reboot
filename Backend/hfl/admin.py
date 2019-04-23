@@ -18,7 +18,7 @@ from hfl.models import (
 class PictureInline(admin.StackedInline):
     model = ListingImage
     extra = 0
-    fields = ["title", "main_image", "image", 'image_tag']
+    fields = ["title", "main_image", "image", 'image_tag', 'weight']
     readonly_fields = ('image_tag', )
     allow_add = True
 

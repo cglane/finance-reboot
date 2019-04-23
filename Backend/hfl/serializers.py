@@ -11,6 +11,7 @@ from rest_framework import routers, serializers, viewsets
 from collections import OrderedDict
 from rest_framework.fields import SkipField
 
+from operator import itemgetter
 
 # Serializers define the API representation.
 
@@ -43,7 +44,7 @@ class ImageSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ListingImage
-        fields = ('title', 'get_absolute_image_url', 'main_image')
+        fields = ('title', 'get_absolute_image_url', 'main_image', 'weight')
 
 
 class AgentSerializer(serializers.ModelSerializer):
@@ -69,6 +70,7 @@ class ListingDetailSerializer(serializers.ModelSerializer):
         fields = ('__all__')
         extra_fields = ['features']
         removed_fields = ['listing_features', 'id', 'display_listing']
+
     def get_field_names(self, declared_fields, info):
         expanded_fields = super(ListingDetailSerializer,
                                 self).get_field_names(declared_fields, info)
@@ -102,8 +104,15 @@ class ListingDetailSerializer(serializers.ModelSerializer):
                 if isinstance(represenation, list) and not represenation:
                     # Do not serialize empty lists
                     continue
-                ret[field.field_name] = represenation
+                if field.field_name == 'images':
+                    if represenation:
+                        result = sorted(represenation,
+                                        key=lambda x: (itemgetter("title".lower(),
+                                                       )
+                                                       ))
+                        represenation = result
 
+                ret[field.field_name] = represenation
         return ret
 
 
