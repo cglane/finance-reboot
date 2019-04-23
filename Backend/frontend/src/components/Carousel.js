@@ -20,7 +20,6 @@ class CustomCarousel extends Component {
         updateHeight()
     }
     render() {
-    console.log(this.props.data, 'data')
         return (
             <Carousel
             showStatus={false}
