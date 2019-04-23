@@ -104,13 +104,6 @@ class ListingDetailSerializer(serializers.ModelSerializer):
                 if isinstance(represenation, list) and not represenation:
                     # Do not serialize empty lists
                     continue
-                if field.field_name == 'images':
-                    if represenation:
-                        result = sorted(represenation,
-                                        key=lambda x: (itemgetter("title".lower(),
-                                                       )
-                                                       ))
-                        represenation = result
 
                 ret[field.field_name] = represenation
         return ret
