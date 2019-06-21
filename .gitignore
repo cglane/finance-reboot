@@ -7,7 +7,6 @@ Backend/db.sqlite3
 Backend/hfl/public
 Backend/build/
 Backend/uploads/
-Backend/hfl/migrations
 Backend/exports
 Frontend/static
 Backend/exports
