@@ -44,7 +44,8 @@ urlpatterns = [
     url(r'^sold-listings', include('frontend.urls')),  # Default to frontend urls
     url(r'^about', include('frontend.urls')),  # Default to frontend urls
     url(r'^$', include('frontend.urls')),
-    url(r'^googlec4a20743e05aaec0.html', TemplateView.as_view(template_name='googlec4a20743e05aaec0.html'), name="home")
+    url(r'^googlec4a20743e05aaec0.html', TemplateView.as_view(template_name='googlec4a20743e05aaec0.html'), name="home"),
+    url(r'^robots.txt', TemplateView.as_view(template_name='robots.txt', content_type='text/plain'))
     # Default to frontend urls
 
 ]
