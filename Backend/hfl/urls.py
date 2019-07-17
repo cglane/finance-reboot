@@ -45,7 +45,8 @@ urlpatterns = [
     url(r'^about', include('frontend.urls')),  # Default to frontend urls
     url(r'^$', include('frontend.urls')),
     url(r'^googlec4a20743e05aaec0.html', TemplateView.as_view(template_name='googlec4a20743e05aaec0.html'), name="home"),
-    url(r'^robots.txt', TemplateView.as_view(template_name='robots.txt', content_type='text/plain'))
+    url(r'^robots.txt', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
+    url(r'^sitemap.xml', TemplateView.as_view(template_name='sitemap.xml', content_type='text/xml')),
     # Default to frontend urls
 
 ]
