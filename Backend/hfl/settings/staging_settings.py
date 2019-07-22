@@ -30,7 +30,7 @@ SECRET_KEY = 'za^(=bc!k)ulybi@0(y0-ov6#i1&$#1mgpy2oed2)h)jdji+vi'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['hfl-backend-four.us-east-1.elasticbeanstalk.com', 'localhost']
 ALLOWED_DOMAINS = ['hfl-backend-four.us-east-1.elasticbeanstalk.com']
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
