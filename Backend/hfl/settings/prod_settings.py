@@ -31,7 +31,7 @@ SECRET_KEY = 'za^(=bc!k)ulybi@0(y0-ov6#i1&$#1mgpy2oed2)h)jdji+vi'
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
-ALLOWED_DOMAINS = ['*']
+ALLOWED_DOMAINS = ['hflcharleston.com']
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = False
 
