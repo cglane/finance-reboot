@@ -30,8 +30,8 @@ SECRET_KEY = 'za^(=bc!k)ulybi@0(y0-ov6#i1&$#1mgpy2oed2)h)jdji+vi'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['hflcharleston.com', 'www.hflcharleston.com', 'hfl-server-side-two.us-east-1.elasticbeanstalk.com']
-ALLOWED_DOMAINS = ['hflcharleston.com', 'hfl-server-side-two.us-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['.elasticbeanstalk.com', '.compute-1.amazonaws.com', 'localhost', '127.0.0.1']
+ALLOWED_DOMAINS = ['*']
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = False
 
