@@ -32,7 +32,6 @@ const PropertyLayout = ({ data }) =>
 
         {/* Image */}
         <div className="row background-image">
-                <img src={mainImage(data)}/>
         </div>
         {/* Keywords */}
         <div className="row background-image-padding">
