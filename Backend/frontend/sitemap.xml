@@ -76,9 +76,6 @@
 		<loc>https://www.hflcharleston.com/estate_property/1-Highway-165</loc>
 	</url>
 	<url>
-		<loc>https://www.hflcharleston.com/estate_property/2630-Bryans-Dairy</loc>
-	</url>
-	<url>
 <loc>https://www.hflcharleston.com/estate_property/6620-Bears-Bluff-Road</loc>
 	</url>
 <url>
@@ -90,6 +87,9 @@
 <url>
 <loc>https://www.hflcharleston.com/estate_property/1980-Longcreek</loc>
 	</url>
+<url>
+<loc>https://www.hflcharleston.com/estate_property/1980-Longcreek-Road</loc>
+</url>
 <url>
 <loc>https://www.hflcharleston.com/estate_property/0-Black-Pond-Road</loc>
 	</url>
@@ -140,9 +140,6 @@
 	</url>
 	<url>
 		<loc> https://www.hflcharleston.com/estate_property/Bulls-Bay-Village</loc>
-	</url>
-	<url>
-	<loc>https://www.hflcharleston.com/estate_property/Bonnie-Doone-Plantation</loc>
 	</url>
 	<url>
 		<loc> https://www.hflcharleston.com/estate_property/Cox-Point</loc>
