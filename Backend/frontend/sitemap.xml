@@ -30,10 +30,7 @@
   <url>
 		<loc>https://www.hflcharleston.com/estate_property/Logbridge-Farm</loc>
   </url>
-  <url>
-		<loc>https://www.hflcharleston.com/estate_property/4-Breakaway-Trail</loc>
-  </url>
-  <url>
+   <url>
 		<loc>https://www.hflcharleston.com/estate_property/6-Breakaway-Trail</loc>
   </url>
   <url>
@@ -79,7 +76,7 @@
 <loc>https://www.hflcharleston.com/estate_property/6620-Bears-Bluff-Road</loc>
 	</url>
 <url>
-<loc>https://www.hflcharleston.com/estate_property/2861-Anchor-Watch</loc>
+<loc>https://www.hflcharleston.com/estate_property/6960-Bears-Bluff-Road</loc>
 	</url>
 <url>
 <loc>https://www.hflcharleston.com/estate_property/Thornley-Tract</loc>
@@ -94,16 +91,10 @@
 <loc>https://www.hflcharleston.com/estate_property/0-Black-Pond-Road</loc>
 	</url>
 <url>
-<loc>https://www.hflcharleston.com/estate_property/Anchor-Watch-Lot-40</loc>
-	</url>
-<url>
 <loc>https://www.hflcharleston.com/estate_property/Pigeon-Pond</loc>
 	</url>
 <url>
 <loc>https://www.hflcharleston.com/estate_property/5827-Grimshaw-Road</loc>
-	</url>
-<url>
-<loc>https://www.hflcharleston.com/estate_property/Bonnie-Doone</loc>
 	</url>
 <url>
 <loc>https://www.hflcharleston.com/estate_property/6555-Southmount</loc>
@@ -118,10 +109,15 @@
 		<loc>https://www.hflcharleston.com/commercial-property</loc>
 	</url>
 	<url>
-		<loc>https://www.hflcharleston.com/estate_property/2143-Heriot-Street</loc>
+		<loc>https://www.hflcharleston.com/estate_property/2143-Heriot-St-Suite-F</loc>
+	</url>
+	<url>
+		<loc>https://www.hflcharleston.com/estate_property/138-Spring-Street</loc>
 	</url>
 	<url>
 		<loc>https://www.hflcharleston.com/estate_property/1159-Cainhoy-Road</loc>
+	</url>
+<url>		<loc>https://www.hflcharleston.com/estate_property/1071-Morrison-Drive-Suite-C</loc>
 	</url>
 	<url>
 		<loc>https://www.hflcharleston.com/residential-listings</loc>
@@ -129,7 +125,14 @@
 	<url>
 		<loc>https://www.hflcharleston.com/sold-listings</loc>
 	</url>
-	<url>
+ 	<url>
+		<loc>https://www.hflcharleston.com/estate_property/4-Breakaway-Trail</loc>
+ 	 </url>
+
+<url>
+<loc>https://www.hflcharleston.com/estate_property/Bonnie-Doone</loc>
+	</url>
+<url>
 		<loc> https://www.hflcharleston.com/estate_property/2735-Cherry-Point</loc>
 	</url>
 	<url>
@@ -195,9 +198,7 @@
 <url>
 		<loc>https://www.hflcharleston.com/estate_property/Whaley-Farm</loc>
 	</url>
-<url>
-		<loc>https://www.hflcharleston.com/estate_property/4775-Retriever-Road</loc>
-	</url>
+
 
 
 </urlset>
